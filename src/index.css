@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply rounded-[32px] h-12 px-5 flex justify-center items-center font-semibold text-base text-white border-none hover:bg-white hover:!text-accent hover:shadow-none cursor-pointer hover:bg-none;
+    background: linear-gradient(101.63deg, #9a7af5 5.27%, #6b3feb 93.14%);
+    box-shadow: 0px 0px 30px 10px rgba(131, 88, 255, 0.25);
+  }
+
+  button.btn-primary[disabled],
+  button.btn-secondary[disabled] {
+    @apply bg-[#323268] text-[#9998AC];
+    background-image: none;
+  }
+
+  .btn-secondary {
+    @apply rounded-[32px] h-12 px-5 flex justify-center items-center font-semibold text-base border-none bg-[#2A294F] text-[#BABAC7] hover:bg-[#323268] hover:!text-white;
+  }
+
+  .tag-status {
+    @apply h-8 rounded-[2rem] border border-solid flex justify-center items-center font-semibold text-sm leading-5 px-3 !bg-opacity-20 w-fit;
+  }
+
+  .status-listing {
+    @apply border-[#05C270] text-[#05C270] bg-[#57EBA4];
+  }
+
+  .status-sale {
+    @apply border-[#FF8801] text-[#FF8801] bg-[#FDAC41];
+  }
+
+  .status-transfer {
+    @apply border-[#00CFDD] text-[#00CFDD] bg-[#74E0E6];
+  }
+
+  .status-mint {
+    @apply border-[#FFCC00] text-[#FFCC00] bg-[#FEDD49];
+  }
+
+  .status-offer {
+    @apply border-[#FE3B3B] text-[#FE3B3B] bg-[#FF8080];
+  }
+
+  .status-collection-offer {
+    @apply border-[#FA6493] text-[#FA6493] bg-[#F88EBE];
+  }
+
+  .status-auction-start {
+    @apply border-[#5B8DEE] text-[#5B8DEE] bg-[#5A8DEC];
+  }
+
+  .status-auction-bid {
+    @apply border-[#FDAC41] text-[#FDAC41] bg-[#FCCC76];
+  }
+
+  .status-auction-settle {
+    @apply border-[#AC5CD9] text-[#AC5CD9] bg-[#DEA4E8];
+  }
+
+  .status-cancel-offer {
+    @apply border-[#FE3B3B] text-[#FE3B3B] bg-[#FF8080];
+  }
+
+  .status-cancel-listing {
+    @apply border-[#989898] text-[##989898] bg-[#CECECE];
+  }
+
+  .status-edit-listing {
+    @apply border-[#1BBC9C] text-[#1BBC9C] bg-[#5FC1AE];
+  }
+
+  .status-accept-offer {
+    @apply border-[#1D92D3] text-[#1D92D3] bg-[#1D92D3];
+  }
+
+  .top-1-rank {
+    @apply border border-solid border-[#FF4444];
+    box-shadow: 0px 4px 10px 4px rgba(254, 59, 59, 0.25);
+  }
+
+  .top-10-rank {
+    @apply border border-solid border-[#FF8801];
+    box-shadow: 0px 4px 10px 4px rgba(255, 136, 1, 0.25);
+  }
+
+  .top-25-rank {
+    @apply border border-solid border-[#29FFF2];
+    box-shadow: 0px 4px 10px 4px rgba(41, 255, 242, 0.25);
+  }
+}
+
+/* Override Antd */
+.ant-drawer-content-wrapper {
+  @apply !w-full sm:!w-[420px];
+}
+.anticon-copy svg,
+.anticon-check svg {
+  @apply fill-[#989BAC];
+}
+.ant-upload-select {
+  @apply hover:!border-white;
+}
+/* End Override Antd */
+
+/* Largest Contentful Paint */
+.background-lcp {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99%;
+  height: 99%;
+  max-width: 99%;
+  max-height: 99%;
+}
+/* End Largest Contentful Paint */

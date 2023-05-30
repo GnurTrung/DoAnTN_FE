@@ -1,0 +1,14 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    background: #2A294F;
+    border-radius: 16px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+}

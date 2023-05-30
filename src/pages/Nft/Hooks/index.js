@@ -1,0 +1,1 @@
+export {default as useGetListOffer} from './useGetListOffer'
