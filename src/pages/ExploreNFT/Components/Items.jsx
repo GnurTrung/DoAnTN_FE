@@ -180,13 +180,13 @@ const Items = () => {
     <div>
       <Toaster />
       <div
-        className="top-option gap-4 flex-wrap lg:flex-nowrap top-[113px] lg:top-[121px]"
+        className="top-option gap-4 flex-wrap lg:flex-nowrap top-[113px] lg:top-[121px] !bg-none"
         ref={searchBarRef}
       >
         <div className="left-option lg:!basis-[50%] !basis-full">
           <Button
             className={cx("btn-secondary mr-4", {
-              "bg-[#323268] text-white": isFilterShown,
+              "bg-[#364055] text-white": isFilterShown,
             })}
             onClick={toggleFilter}
           >
@@ -204,16 +204,6 @@ const Items = () => {
         </div>
         <div className="right-option flex-col !items-start sm:flex-row lg:!basis-[50%] !basis-full">
           <div className="flex w-full mb-[0.7rem] sm:mb-0">
-            <button
-              className="top-option_btn top-option_clean"
-              onClick={() => toast.success("Coming Soon!")}
-            >
-              <span>
-                <IconClean className="top-option_icon" />
-                Sweep
-              </span>
-            </button>
-
             <div className="flex-1">
               <CustomSelect
                 value={paramsSearch.orderBy}
@@ -228,8 +218,8 @@ const Items = () => {
             <li>
               <button
                 className={cx(
-                  "cursor-pointer w-[3rem] h-[3rem] rounded-full flex justify-center items-center mr-4  bg-[#2A294F] hover:bg-[#323268]",
-                  { "bg-[#323268] focus:bg-[#323268]": !isOnSmallGridMode }
+                  "cursor-pointer w-[3rem] h-[3rem] rounded-full flex justify-center items-center mr-4  bg-[#1B2333] hover:bg-[#364055]",
+                  { "bg-[#364055] focus:bg-[#364055]": !isOnSmallGridMode }
                 )}
                 onClick={() => changeGridMode(false)}
               >
@@ -239,8 +229,8 @@ const Items = () => {
             <li>
               <button
                 className={cx(
-                  "cursor-pointer w-[3rem] h-[3rem] rounded-full flex justify-center items-center bg-[#2A294F] hover:bg-[#323268]",
-                  { "bg-[#323268] focus:bg-[#323268]": isOnSmallGridMode }
+                  "cursor-pointer w-[3rem] h-[3rem] rounded-full flex justify-center items-center bg-[#1B2333] hover:bg-[#364055]",
+                  { "bg-[#364055] focus:bg-[#364055]": isOnSmallGridMode }
                 )}
                 onClick={() => changeGridMode(true)}
               >

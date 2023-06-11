@@ -59,7 +59,7 @@
       min-height: 84px;
       padding: 12px 0;
       border-radius: 16px;
-      background-color: #1f1d43;
+      background-color: #131924;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -199,7 +199,7 @@
 }
 
 .top-option_btn {
-  background: #2a294f !important;
+  background: #1B2333 !important;
   border-radius: 32px;
   padding: 12px 21px;
   display: flex;
@@ -209,7 +209,7 @@
 }
 
 .top-option_btn:hover {
-  background-color: #2a294f !important;
+  background-color: #1B2333 !important;
 }
 
 .top-option_btn span {
@@ -228,7 +228,7 @@
 .top-option_search form {
   position: relative;
   border-radius: 32px !important;
-  background-color: #2a294f !important;
+  background-color: #1B2333 !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,7 +319,7 @@
 
 .top-option_placeholder {
   border-radius: 32px;
-  background-color: #2a294f;
+  background-color: #1B2333;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -352,7 +352,7 @@
 }
 
 .content_left {
-  background-color: #1f1d43;
+  background-color: #131924;
   padding: 18px;
   border-radius: 16px;
 }
@@ -416,7 +416,7 @@
       &:first-child {
         margin-right: 8px;
       }
-      background: #2a294f;
+      background: #1B2333;
       border-radius: 32px;
       display: flex;
       align-items: center;

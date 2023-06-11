@@ -105,7 +105,7 @@ const Explore = () => {
                                                 </div>
                                             </Link>
                                             <div className='pb-2'>
-                                                <div className="flex justify-between bg-[#2A294F] px-4 py-3 mx-2 rounded-2xl">
+                                                <div className="flex justify-between bg-[#1B2333] px-4 py-3 mx-2 rounded-2xl">
                                                     <div>
                                                         <p className='text-[12px] text-[#BABAC7]'>Items</p>
                                                         <p className="font-semibold text-white text-[14px]">
@@ -124,7 +124,7 @@ const Explore = () => {
                                                         <p className='font-semibold text-white text-[14px]'>{getSuiPricePublic(idx)}</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex justify-center bg-[#2A294F] px-4 py-3 pb-3 mx-2 my-3 rounded-full text-[#BABAC7]">
+                                                <div className="flex justify-center bg-[#1B2333] px-4 py-3 pb-3 mx-2 my-3 rounded-full text-[#BABAC7]">
                                                     <p>Event Ends</p>
                                                 </div>
                                             </div>

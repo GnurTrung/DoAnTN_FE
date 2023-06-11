@@ -159,25 +159,7 @@ function Collection(props) {
               </div>
             </div>
             <div className="flex flex-col items-start lg:items-end justify-center pt-9 ssm:pt-0 lg:pt-9">
-              <div className="flex items-center mb-5 space-x-5">
-                <Button
-                  className="btn-primary text-sm w-44"
-                  // onClick={onClickMakeCollectionOffer}
-                >
-                  Make collection offer
-                </Button>
-                <div>
-                  <Switch
-                    checked={collectionDetail?.isLike}
-                    className="mr-[10px]"
-                    onChange={handleAddToWatchlist}
-                  />
-                  <span className="text-[white] text-sm font-semibold leading-5">
-                    Watching
-                  </span>
-                </div>
-              </div>
-              <div className="right-info !flex flex-wrap !justify-start mb-[3rem] lg:mb-0 gap-[1rem]">
+              <div className="right-info !flex flex-wrap !justify-start mb-[3rem] lg:mb-0 gap-[1rem] lg:mt-4">
                 {stats.map((stat, index) => (
                   <div key={index} className="stat">
                     <p className="m-auto text-[#BABAC7] text-sm font-medium leading-5">

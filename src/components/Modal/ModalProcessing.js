@@ -35,7 +35,7 @@ const ModalProcessing = (props) => {
           <h4 className="text-base text-[#BABAC7] font-medium leading-6 mb-3">
             Item
           </h4>
-          <div className="p-3 flex justify-between items-center bg-[#2A294F] rounded-2xl">
+          <div className="p-3 flex justify-between items-center bg-[#1B2333] rounded-2xl">
             <div className="flex items-center space-x-2">
               <Image
                 src={nft?.imageUrl}

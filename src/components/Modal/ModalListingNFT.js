@@ -113,7 +113,7 @@ const ModalListingNFT = (props) => {
       }
     >
       <div className="w-full p-5 space-y-5">
-        <div className="bg-[#2A294F] rounded-2xl p-3">
+        <div className="bg-[#1B2333] rounded-2xl p-3">
           <div className="flex items-center space-x-2">
             <Image
               src={nft?.imageUrl}

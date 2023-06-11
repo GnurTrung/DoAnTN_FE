@@ -83,7 +83,7 @@ const Explore = () => {
                                   ?.attributes?.url
                               }
                               alt="images"
-                              className="h-[200px] w-full object-cover rounded-t-2xl !m-0"
+                              className="h-[250px] w-full object-cover rounded-t-2xl !m-0"
                               wrapperClassName="w-full"
                             />
                           </div>
@@ -99,7 +99,7 @@ const Explore = () => {
                               {idx?.attributes?.name}
                             </div>
                           </Link>
-                          <div className="flex justify-between items-center rounded-[8px] mx-2 bg-[#2A294F] p-[12px] mt-[10px] text-[12px] mb-5s">
+                          <div className="flex justify-between items-center rounded-[8px] mx-2 bg-[#1B2333] p-[12px] mt-[10px] text-[12px] mb-5s">
                             <div className="flex ">
                               <div>Launching:</div>
                               <div className="flex font-display font-semibold text-white ml-1.5">{`${dateTimeFormat(

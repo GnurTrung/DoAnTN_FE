@@ -15,7 +15,7 @@ const RefCode = () => {
         }, 2000);
     }, [copied]);
     return (
-        <div className="bg-[#1F1D43] border-jacarta-600 rounded-2xl border py-4 px-8 mt-6">
+        <div className="bg-[#131924] border-jacarta-600 rounded-2xl border py-4 px-8 mt-6">
             <span className="text-white font-semibold">
                 Invite Friend
             </span>

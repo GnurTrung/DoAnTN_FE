@@ -19,19 +19,6 @@ import { useDrawerMenu } from "hooks";
 import MobileNav from "./MobileNav";
 import SearchHeader from "./SearchHeader";
 
-export const menuRedirect = [
-  {
-    key: "1",
-    label: (
-      <Link
-        to={`${process.env.REACT_APP_MAIN_URL}/radars`}
-        className="opacity-60 hover:opacity-100 flex items-center space-x-2 p-2 rounded-lg hover:bg-[#2A294F]"
-      >
-        <span className="text-white font-semibold">Radar</span>
-      </Link>
-    ),
-  },
-];
 
 const Header = () => {
   const { account } = useWeb3();
@@ -73,7 +60,7 @@ const Header = () => {
   return (
     <header
       className={`!z-[999] ${
-        scroll ? "sticky top-0 !bg-[#1F1D43]" : "!bg-[#1F1D43]"
+        scroll ? "sticky top-0 !bg-[#131924]" : "!bg-[#131924]"
       }`}
     >
       <div className="tf-container">
@@ -114,7 +101,7 @@ const Header = () => {
                   <div className="header-center">
                     <nav
                       id="main-nav"
-                      className={`main-nav !mt-[4.5rem] lg:!mt-[0rem] !w-full !bg-[#1F1D43] ${
+                      className={`main-nav !mt-[4.5rem] lg:!mt-[0rem] !w-full !bg-[#131924] ${
                         menuActive ? "active " : ""
                       } !h-screen lg:!h-[unset]`}
                     >
@@ -130,7 +117,7 @@ const Header = () => {
                               <li
                                
                                 className={`menu-item !px-4 ${
-                                  menuActive && "hover:bg-[#323268]"
+                                  menuActive && "hover:bg-[#364055]"
                                 }`}
                               >
                                 <NavLink
@@ -161,7 +148,7 @@ const Header = () => {
                             <li
                               key={idx}
                               className={`menu-item !px-[15px] ${
-                                menuActive && "hover:bg-[#323268]"
+                                menuActive && "hover:bg-[#364055]"
                               }`}
                             >
                               <NavLink
@@ -182,11 +169,6 @@ const Header = () => {
                             </li>
                           )
                         )}
-                        <Dropdown menu={{ items: menuRedirect }}>
-                          <li className="menu-item !px-[15px] cursor-pointer flex items-center py-28">
-                            <IconMore fill="#9998AC" />
-                          </li>
-                        </Dropdown>
                       </ul>
                     </nav>
                   </div>

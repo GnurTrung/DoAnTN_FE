@@ -46,17 +46,6 @@ export const getBanner = async () => {
   }
   return { data: [], meta: {} };
 };
-export const getTrending = async () => {
-  try {
-    const url = `${URLCMS}nft-collections/?populate=*&filters[collectionCategory][$eq]=TrendingNow`;
-    const response = await getCMSAsync(url);
-    const { data } = response;
-    return data;
-  } catch (ex) {
-    console.log(ex);
-  }
-  return { data: [], meta: {} };
-};
 
 export const getNFTINOAll = async () => {
   try {

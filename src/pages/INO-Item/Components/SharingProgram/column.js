@@ -72,7 +72,7 @@ export const sharingProgramColumn = (account) => {
               href={value}
               target="_blank"
               rel="noreferrer"
-              className="text-[#D558FF] hover:text-white"
+              className="text-[#9998AC] hover:text-white"
             >
               <div className="flex items-center space-x-1">
                 <IconSui />

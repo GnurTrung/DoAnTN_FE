@@ -137,7 +137,7 @@ const Explore = () => {
                               </div>
                             </div>
                           </Link>
-                          <div className="flex justify-between bg-[#2A294F] px-4 py-3 mx-2 rounded-2xl">
+                          <div className="flex justify-between bg-[#1B2333] px-4 py-3 mx-2 rounded-2xl">
                             <div>
                               <p className="text-[12px] text-[#BABAC7]">
                                 Items
@@ -182,7 +182,7 @@ const Explore = () => {
                             getStartTime(idx),
                             new Date().getTime()
                           ) && (
-                            <div className="flex items-center justify-between mt-2 mx-2 bg-[#2A294F] rounded-2xl">
+                            <div className="flex items-center justify-between mt-2 mx-2 bg-[#1B2333] rounded-2xl">
                               <span className="text-[12px] ml-4">
                                 Starts In:
                               </span>
@@ -197,7 +197,7 @@ const Explore = () => {
                             </div>
                           )}
                           {activeID == 4 && (
-                            <div className="flex justify-center bg-[#2A294F] px-4 py-3 pb-3 mx-2 mt-2 rounded-full text-[#BABAC7]">
+                            <div className="flex justify-center bg-[#1B2333] px-4 py-3 pb-3 mx-2 mt-2 rounded-full text-[#BABAC7]">
                               <p>Event Ends</p>
                             </div>
                           )}

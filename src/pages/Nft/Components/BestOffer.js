@@ -39,7 +39,7 @@ const BestOffer = () => {
             console.log('bestRow', bestRow)
             return (
                 <div
-                    className={"mt-4 grid rounded-2xl bg-[#2A294F] items-center p-4 text-sm mb-2 font-semibold"}
+                    className={"mt-4 grid rounded-2xl bg-[#1B2333] items-center p-4 text-sm mb-2 font-semibold"}
                 >
                     <p>Best offer</p>
                     <p className="title-detail text-[24px] font-semibold">{price} SUI</p>

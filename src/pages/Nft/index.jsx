@@ -139,7 +139,7 @@ function NftDetail(props) {
                         </div>
                         <Link
                           to={toCollection}
-                          className="text-base text-[#D558FF] hover:text-accent flex items-center font-semibold"
+                          className="text-base text-[#9998AC] hover:text-accent flex items-center font-semibold"
                         >
                           <div className="pr-1.5">View Collection</div>{" "}
                           <IconExternal />
@@ -259,7 +259,7 @@ function NftDetail(props) {
                         </div>
                         <Link
                           to={toCollection}
-                          className="text-base text-[#D558FF] hover:text-accent flex items-center mt-2 font-semibold"
+                          className="text-base text-[#9998AC] hover:text-accent flex items-center mt-2 font-semibold"
                         >
                           <div className="pr-1.5">View Collection</div>{" "}
                           <IconExternal />
