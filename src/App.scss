@@ -1016,7 +1016,7 @@ a {
 }
 
 .is_dark {
-  --background-body: #181735;
+  --background-body: #0F131C;
   --primary-color: rgb(247, 247, 247, 0.8);
   --primary-color2: #8a8aa0;
   --primary-color3: #3749e9;
@@ -1232,7 +1232,7 @@ a {
 }
 
 .sc-product {
-  background: #1f1d43;
+  background: #131924;
   border-radius: 15px;
   @include transition3;
   &:hover {
@@ -3408,7 +3408,7 @@ a {
 }
 .custom-modal {
   .ant-modal-content {
-    background-color: #1f1d43;
+    background-color: #131924;
     border-radius: 1rem;
     padding: 0;
   }
@@ -3456,7 +3456,7 @@ a {
     }
   }
   .ant-checkbox-inner {
-    background-color: #1f1d43;
+    background-color: #131924;
     border-color: #4e4d6e;
     min-width: 1.25rem;
     min-height: 1.25rem;
@@ -3477,7 +3477,7 @@ a {
     width: 100% !important;
     height: 100% !important;
     border-radius: 2rem;
-    background-color: #2a294f !important;
+    background-color: #1B2333 !important;
     border: none !important;
     font-weight: 600;
     input {
@@ -3500,7 +3500,7 @@ a {
     width: 100%;
     height: 100% !important;
     border-radius: 2rem;
-    background-color: #2a294f !important;
+    background-color: #1B2333 !important;
     border: none !important;
     font-weight: 600;
     input {
@@ -3527,7 +3527,7 @@ a {
 .custom-text-input {
   height: 3rem;
   border-radius: 2rem !important;
-  background-color: #2a294f !important;
+  background-color: #1B2333 !important;
   border-width: 0px;
   &:hover {
     border: 1px solid white !important;
@@ -3573,7 +3573,7 @@ a {
   }
 }
 .custom-popup {
-  background-color: #2a294f;
+  background-color: #1B2333;
   border-radius: 1rem;
   padding: 0;
   .ant-select-item {
@@ -3588,10 +3588,10 @@ a {
   }
   .ant-select-item-option {
     &-active:not(.ant-select-item-option-disabled) {
-      background-color: #323268;
+      background-color: #364055;
     }
     &-selected:not(.ant-select-item-option-disabled) {
-      background-color: #323268;
+      background-color: #364055;
       color: white;
     }
   }
@@ -3599,7 +3599,7 @@ a {
 .sticky-search {
   position: sticky;
   top: 121px;
-  background-color: #181735;
+  background-color: #0F131C;
   z-index: 10;
 }
 .sticky-filter {
@@ -3628,11 +3628,11 @@ a {
         box-shadow: none !important;
       }
       tbody tr {
-        background-color: #2a294f !important;
+        background-color: #1B2333 !important;
         border-radius: 1rem;
         &:hover {
           td {
-            background-color: #323268 !important;
+            background-color: #364055 !important;
           }
         }
         td {
@@ -3657,7 +3657,7 @@ a {
     padding: 1.25rem !important;
   }
   .ant-collapse-content {
-    background-color: #1f1d43 !important;
+    background-color: #131924 !important;
     border-radius: 0 0 1rem 1rem !important;
   }
 }
@@ -3668,7 +3668,7 @@ a {
   }
 }
 .ant-switch {
-  background-color: #2a294f !important;
+  background-color: #1B2333 !important;
   &-checked {
     background-color: #8358ff !important;
   }
@@ -3680,7 +3680,7 @@ a {
 
 .ant-dropdown {
   &-menu {
-    background-color: #1f1d43 !important;
+    background-color: #131924 !important;
     border: 1px solid #4e4d6e !important;
     &-item {
       padding: 0px !important ;
@@ -3688,10 +3688,10 @@ a {
   }
 }
 .apexcharts-tooltip-title {
-  background-color: #1f1d43 !important;
+  background-color: #131924 !important;
 }
 .apexcharts-active {
-  background-color: #1f1d43 !important;
+  background-color: #131924 !important;
 }
 // .apexcharts-toolbar{
 //   visibility: hidden !important;
@@ -3709,7 +3709,7 @@ a {
     border-radius: 16px;
     &-selected,
     &-active {
-      background-color: #2a294f !important;
+      background-color: #1B2333 !important;
       span {
         color: white !important;
       }
@@ -3727,10 +3727,10 @@ a {
     padding: 1rem !important;
   }
   .ant-collapse-content {
-    background-color: #1f1d43 !important;
+    background-color: #131924 !important;
     border-radius: 0 0 1rem 1rem !important;
     border-top: 1px solid #4e4d6e !important;
-    background-color: #2a294f !important;
+    background-color: #1B2333 !important;
     overflow: auto !important;
     max-height: 300px !important;
     padding: 1rem !important;

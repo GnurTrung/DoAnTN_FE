@@ -213,8 +213,8 @@ const Analysis = () => {
       <li key={item.id} onClick={() => handleMenu(item.id)}>
         <div
           className={
-            (item.id != activeID) ? 'hover:bg-[#323268] text-[#BABAC7] flex items-center !rounded-xl border p-2 dark:border-transparent font-semibold text-base cursor-pointer'
-              : 'bg-[#323268] flex p-2 items-center !rounded-lg text-white font-semibold text-base cursor-pointer'
+            (item.id != activeID) ? 'hover:bg-[#364055] text-[#BABAC7] flex items-center !rounded-xl border p-2 dark:border-transparent font-semibold text-base cursor-pointer'
+              : 'bg-[#364055] flex p-2 items-center !rounded-lg text-white font-semibold text-base cursor-pointer'
           }
         >
           <span>{item.text}</span>

@@ -2644,7 +2644,7 @@ header.absolute {
 
 .c-jkqPfY button {
   color: white !important;
-  background-color: #2a294f !important;
+  background-color: #1B2333 !important;
   border-radius: 9999px;
   border: none !important;
 }
@@ -2654,7 +2654,7 @@ header.absolute {
 }
 
 .c-gbkFLu {
-  background-color: #1f1d43 !important;
+  background-color: #131924 !important;
 }
 
 .c-hRMzlB {
@@ -2679,7 +2679,7 @@ header.absolute {
 }
 
 .c-dujUcX {
-  background-color: #1f1d43 !important;
+  background-color: #131924 !important;
 }
 
 .c-iBFfcK {
@@ -2688,11 +2688,11 @@ header.absolute {
 }
 
 .c-isyYnr-cGTcpV-selected-true {
-  background-color: #2a294f !important;
+  background-color: #1B2333 !important;
 }
 
 .c-isyYnr-pUJvu-selected-true {
-  background-color: #2a294f !important;
+  background-color: #1B2333 !important;
 }
 
 .c-ZQflF a:hover {
@@ -2718,7 +2718,7 @@ header.absolute {
   height: 400px;
   left: 291px;
   top: -10px;
-  background: #1f1d43;
+  background: #131924;
   border-radius: 16px;
   flex: none;
   order: 4;
@@ -2834,7 +2834,7 @@ header.absolute {
 }
 
 .avatar-border {
-  border: 7px solid #323268 !important;
+  border: 7px solid #364055 !important;
 }
 
 .lazy-load-image-loaded {
@@ -2848,7 +2848,7 @@ header.absolute {
   /* align-items: flex-start; */
   padding: 20px;
   gap: 40px;
-  background: #1F1D43;
+  background: #131924;
   border-radius: 16px;
   flex: none;
   order: 1;

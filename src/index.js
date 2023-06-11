@@ -12,24 +12,7 @@ import { ApplicationProvider } from "contexts/useApplication";
 import { WalletKitProvider } from "@mysten/wallet-kit";
 import IconLCP from "components/IconLCP";
 
-import * as Sentry from "@sentry/react";
-import { Integrations } from "@sentry/tracing";
 import SocketProvider from "contexts/useSocketContext";
-
-try {
-  if (process.env.NODE_ENV != "development") {
-    // Sentry.init({
-    //     dsn: "https://dfd8e29291d746818724692b373a50ba@sentry.tool.ftech.ai/77",
-    //     integrations: [new Integrations.BrowserTracing()],
-    //     // Set tracesSampleRate to 1.0 to capture 100%
-    //     // of transactions for performance monitoring.
-    //     // We recommend adjusting this value in production
-    //     tracesSampleRate: 1.0,
-    // });
-  }
-} catch (ex) {
-  console.log(ex);
-}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

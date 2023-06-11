@@ -120,7 +120,7 @@ const Banner = () => {
                                   {/* <img src={img} alt="images" /> */}
                                   <Image
                                     src={getLogo(idx)}
-                                    className="md:aspect-[3.5/1] md:min-h-[400px] min-h-[540px] !object-cover w-full"
+                                    className="md:aspect-[4/1] md:min-h-[400px] min-h-[540px] !object-cover w-full"
                                     wrapperClassName="w-full"
                                   />
                                   <div

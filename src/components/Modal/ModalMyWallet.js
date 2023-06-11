@@ -51,10 +51,10 @@ const ModalMyWallet = ({ open, onCancel }) => {
       className="h-[80%] max-w-[1440px]"
     >
       <div className="w-full h-full grid grid-cols-5 bg-[#181735]">
-        <div className="col-span-1 p-5 bg-[#1F1D43] rounded-bl-2xl">
+        <div className="col-span-1 p-5 bg-[#131924] rounded-bl-2xl">
           <Menu
             items={menus}
-            className="custom-menu bg-[#1F1D43] rounded-bl-2xl"
+            className="custom-menu bg-[#131924] rounded-bl-2xl"
           />
         </div>
         <div className="p-5"></div>

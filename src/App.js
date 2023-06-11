@@ -60,7 +60,7 @@ function App() {
     });
   }, []);
 
-  const { showPopupWallet, onHidePopupWallet, showModalSwap, onHideModalSwap } =
+  const { showPopupWallet, onHidePopupWallet } =
     useApplication();
 
   return (
@@ -81,12 +81,6 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Link
-        to="/portfolio"
-        className="fixed right-0 bottom-10 z-50 cursor-pointer animate-fly"
-      >
-        <IconPortfolio />
-      </Link>
       <Footer />
     </Suspense>
   );

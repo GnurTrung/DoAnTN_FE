@@ -16,7 +16,7 @@ const Loading = ({ className }) => {
           cx="39"
           cy="39"
           r="35.3721"
-          stroke="#2A294F"
+          stroke="#1B2333"
           strokeWidth="7.25581"
         />
         <path

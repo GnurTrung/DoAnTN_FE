@@ -2,8 +2,8 @@ import { Banner, LaunchpadDrop } from "./Components";
 
 import dataBanner from "assets/fake-data/data-banner";
 import Meta from "components/Meta";
-import Collection from "components/collection/Collection";
 import Marquees from "./Components/Marquees";
+import Ranking from "pages/Ranking";
 
 const Home = () => {
   return (
@@ -12,11 +12,9 @@ const Home = () => {
       <div className="">
         <div id="page">
           <Marquees />
-          {/* <SwapBanner /> */}
           <Banner data={dataBanner} />
           <LaunchpadDrop />
-          <Collection />
-          {/* <TopCollection /> */}
+          <Ranking />
         </div>
       </div>
     </>

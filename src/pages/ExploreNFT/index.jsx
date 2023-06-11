@@ -11,8 +11,11 @@ function Collection(props) {
       <div className="page-collection">
         <section className="tf-explore-sidebar">
           <div className="tf-container">
-            <h4 className="font-display font-semibold text-4xl py-10 text-white">
+            <h4 className="font-display font-semibold text-4xl pt-10 text-white">
               Explore NFTs
+            </h4>
+            <h4 className="font-display font-medium text-lg pb-10">
+            Buy and Sell NFTs on Sui Network.
             </h4>
             <Items />
           </div>

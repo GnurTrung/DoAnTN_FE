@@ -11,10 +11,8 @@ import IconEye from "../../../assets/icons/drawer/IconEye";
 import IconHeart from "../../../assets/icons/drawer/IconHeart";
 import IconProfile from "../../../assets/icons/drawer/IconProfile";
 import IconSetting from "../../../assets/icons/drawer/IconSetting";
-import avt1 from "../../../assets/images/blog/author.jpg";
 import DefaultAvatar from "assets/images/avatar_default.png";
 import { useEffect } from "react";
-import IconArrowSwap from "assets/icons/IconArrowSwap";
 import { useApplication } from "contexts/useApplication";
 
 const DrawerAccountProfile = ({ onClose }) => {
@@ -74,7 +72,7 @@ const DrawerAccountProfile = ({ onClose }) => {
 
       {/* Icon wallet */}
       <div className="">
-        <div className="bg-[#323268] mt-[1.5rem] rounded-[18px] flex px-[20px] py-[15px] items-center gap-[8px]">
+        <div className="bg-[#364055] mt-[1.5rem] rounded-[18px] flex px-[20px] py-[15px] items-center gap-[8px]">
           <p className="font-[500]">Wallet: </p>
           <div className="w-[1.5rem]">
             <img src={walletData?.src} alt="img" className="w-full" />
@@ -84,13 +82,13 @@ const DrawerAccountProfile = ({ onClose }) => {
       {/* End Icon Wallet */}
 
       {/* select list */}
-      <ul className="mt-[2rem] bg-[#2A294F] rounded-[18px]">
+      <ul className="mt-[2rem] bg-[#1B2333] rounded-[18px]">
         <Link
           to={`/profile/${account}`}
           onClick={onClose}
           className="hover:text-white"
         >
-          <li className="rounded-t-[18px] transition-all group hover:bg-[#323268] cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
+          <li className="rounded-t-[18px] transition-all group hover:bg-[#364055] cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
             <div className="flex gap-[0.5rem] items-center">
               <IconProfile />
               Profile
@@ -103,7 +101,7 @@ const DrawerAccountProfile = ({ onClose }) => {
           onClick={onClose}
           className="hover:text-white"
         >
-          <li className="cursor-pointer transition-all group hover:bg-[#323268] px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
+          <li className="cursor-pointer transition-all group hover:bg-[#364055] px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
             <div className="flex gap-[0.5rem] items-center">
               <IconHeart className="" />
               Favorite
@@ -116,7 +114,7 @@ const DrawerAccountProfile = ({ onClose }) => {
           onClick={onClose}
           className="hover:text-white"
         >
-          <li className="transition-all hover:bg-[#323268] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
+          <li className="transition-all hover:bg-[#364055] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
             <div className="flex gap-[0.5rem] items-center">
               <IconEye />
               Watchlist
@@ -124,7 +122,7 @@ const DrawerAccountProfile = ({ onClose }) => {
             <IconExpand className="rotate-90 w-[18px]" />
           </li>
         </Link>
-        <li className="transition-all hover:bg-[#323268] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
+        <li className="transition-all hover:bg-[#364055] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
           <div className="flex gap-[0.5rem] items-center">
             <IconCrown />
             VIP Status
@@ -132,7 +130,7 @@ const DrawerAccountProfile = ({ onClose }) => {
           <IconExpand className="rotate-90 w-[18px]" />
         </li>
         <Link to={`/portfolio`} onClick={onClose} className="hover:text-white">
-          <li className="transition-all hover:bg-[#323268] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
+          <li className="transition-all hover:bg-[#364055] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
             <div className="flex gap-[0.5rem] items-center">
               <IconEye />
               Portfolio
@@ -145,7 +143,7 @@ const DrawerAccountProfile = ({ onClose }) => {
           onClick={onClose}
           className="hover:text-white"
         >
-          <li className="rounded-b-[18px] transition-all group hover:bg-[#323268] cursor-pointer px-[1.8rem] py-[1.3rem] font-[600] flex justify-between">
+          <li className="rounded-b-[18px] transition-all group hover:bg-[#364055] cursor-pointer px-[1.8rem] py-[1.3rem] font-[600] flex justify-between">
             <div className="flex gap-[0.5rem] items-center">
               <IconSetting />
               Setting
@@ -160,76 +158,14 @@ const DrawerAccountProfile = ({ onClose }) => {
       <div className="mt-[2rem]">
         <div className="flex items-center justify-between">
           <span className="text-[#BABAC7] font-[600]">Funds in wallet</span>
-          <div
-            className="flex items-center space-x-2 cursor-pointer group"
-            onClick={() => {
-              onShowModalSwap();
-              onClose();
-            }}
-          >
-            <IconArrowSwap />
-            <span className="font-medium text-[#D558FF] text-sm group-hover:underline">
-              Swap $TOCE/SUI
-            </span>
-          </div>
         </div>
-        <div className="bg-[#323268] mt-[1.5rem] rounded-[18px] flex flex-col p-[20px] justify-center items-center gap-[8px]">
+        <div className="bg-[#364055] mt-[1.5rem] rounded-[18px] flex flex-col p-[20px] justify-center items-center gap-[8px]">
           <p className="text-[#BABAC7] font-[500]">Total balance</p>
           <p className="text-[24px] font-[600]">
             {numberShortFormat(mystToSui(balance))} SUI
           </p>
         </div>
       </div>
-      {/* 
-        <div className="bg-[#2A294F] rounded-[18px] mt-[1.5rem]">
-          <li className="rounded-t-[18px] ease-in-out duration-200 transition-all hover:bg-[#323268] cursor-pointer px-[1.8rem] py-[1.3rem] font-[600] flex justify-between">
-            <div>
-              <div className="flex items-center gap-[0.5rem]">
-                <im
-                  g
-                  src={sui}
-                  className="w-[1rem]"
-                  alt="Tocen - NFT Marketplace"
-                />
-                SUI
-              </div>
-              <div className="text-[#BABAC7] font-[500] mt-[0.3rem]">
-                $0.17
-                <span className="ml-[0.5rem] font-[600] text-[#D558FF]">
-                  +2.6%
-                </span>
-              </div>
-            </div>
-            <div className="flex gap-[1rem] items-center">
-              <p className="font-[600]">0,00</p>
-              <IconExpand className="rotate-90 w-[18px]" />
-            </div>
-          </li>
-          <li className="rounded-b-[18px] ease-in-out duration-200 transition-all hover:bg-[#323268] cursor-pointer px-[1.8rem] py-[1.3rem] font-[600] flex justify-between">
-            <div>
-              <div className="flex items-center gap-[0.5rem]">
-                <img src={tocen} alt="Tocen - NFT Marketplace" />
-                Tocen
-              </div>
-              <div className="text-[#BABAC7] font-[500] mt-[0.3rem]">
-                $0.17
-                <span className="ml-[0.5rem] font-[600] text-[#D558FF]">
-                  +2.6%
-                </span>
-              </div>
-            </div>
-            <div className="flex gap-[1rem] items-center">
-              <p className="font-[600]">0,00</p>
-              <IconExpand className="rotate-90 w-[18px]" />
-            </div>
-          </li>
-        </div>
-      </div> */}
-      {/* End Funds in Wallet */}
-
-      {/* Button */}
-      {/* <button className="btn-primary w-full mt-[2rem]">Add Funds</button> */}
-      {/* End Button */}
     </div>
   );
 };

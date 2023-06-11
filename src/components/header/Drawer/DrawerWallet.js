@@ -24,7 +24,7 @@ const DrawerWallet = () => {
     const ui = wallets.map((x) => {
       return (
         <li
-          className="group transition-all h-[60px] bg-[#2A294F] px-[20px] py-[12px] cursor-pointer rounded-[16px] flex items-center gap-[1.2rem]"
+          className="group transition-all h-[60px] bg-[#1B2333] px-[20px] py-[12px] cursor-pointer rounded-[16px] flex items-center gap-[1.2rem]"
           key={x.tag}
           onClick={() => onConnect(x)}
         >

@@ -11,7 +11,7 @@ const IconExpand = (props) => (
   >
     <path
       d="M19.92 15.0496L13.4 8.52965C12.63 7.75965 11.37 7.75965 10.6 8.52965L4.07996 15.0496"
-      stroke="#D558FF"
+      stroke="#9998AC"
       strokeWidth={2.5}
       strokeMiterlimit={10}
       strokeLinecap="round"

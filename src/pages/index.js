@@ -7,6 +7,7 @@ const INO = lazy(() => import("./INO"));
 const INODetailPage = lazy(() => import("./INO-Item"));
 const NftDetail = lazy(() => import("./Nft"));
 const ProfilePage = lazy(() => import("./User"));
+const Ranking = lazy(() => import("./Ranking"));
 
 const routes = [
   { path: "/", component: <Home /> },
@@ -16,6 +17,7 @@ const routes = [
   { path: "/profile/:id", component: <ProfilePage /> },
   { path: "/mint-nft", component: <INO /> },
   { path: "/explore", component: <CollectionPage /> },
+  { path: "/ranking", component: <Ranking /> },
 ];
 
 export default routes;

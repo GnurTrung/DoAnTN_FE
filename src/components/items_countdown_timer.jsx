@@ -1,71 +1,50 @@
 import React from "react";
 import Countdown from "react-countdown";
 
-const Completionist = () => {
-  return (
-    <div className="text-2xs absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center justify-center space-x-1 rounded-full bg-white py-2.5 px-6 font-medium">
-      <span
-        className="js-countdown-timer text-jacarta-700 shrink-0 whitespace-nowrap"
-        data-countdown="2022-05-14T10:45:30"
-        data-expired="This auction has ended"
-      >
-        This auction has ended
-      </span>
-    </div>
-  );
-};
-
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
     // return <Completionist />;
   } else {
     return (
-      <>
-        <div
-          className="js-countdown-single-timer flex space-x-4 w-full justify-center py-2"
-          data-countdown="2022-09-07T19:40:30"
-          data-expired="This auction has ended"
-        >
-          <span className="countdown-days text-white">
-            <span className="js-countdown-days-number font-medium text-[18px]">
-              {days}
-            </span>
-            <span className="block text-xs font-medium tracking-tight">
-              Days
-            </span>
-          </span>
-          <span className="countdown-hours text-white">
-            <span className="js-countdown-hours-number text-[18px] font-medium ">
-              {hours}
-            </span>
-            <span className="block text-xs font-medium tracking-tight">
-              Hrs
-            </span>
-          </span>
-          <span className="countdown-minutes text-white">
-            <span className="js-countdown-minutes-number text-[18px] font-medium">
-              {minutes}
-            </span>
-            <span className="block text-xs font-medium tracking-tight">
-              Min
-            </span>
-          </span>
-          <span className="countdown-seconds text-white">
-            <span className="js-countdown-seconds-number text-[18px] font-medium">
-              {seconds}
-            </span>
-            <span className="block text-xs font-medium tracking-tight">
-              Sec
-            </span>
-          </span>
-        </div>
-      </>
+      <div
+        className="js-countdown-single-timer flex w-full justify-evenly"
+        data-countdown="2022-09-07T19:40:30"
+        data-expired="This auction has ended"
+      >
+        <span className="countdown-days flex items-end">
+          <div className="">{days}</div>
+          <div className="block tracking-tight">d</div>
+        </span>
+        <span className="countdown-hours flex items-end">
+          <span className="js-countdown-hours-number">{hours}</span>
+          <span className="block tracking-tight">h</span>
+        </span>
+        <span className="countdown-minutes flex items-end">
+          <span className="js-countdown-minutes-number">{minutes}</span>
+          <span className="block tracking-tight">m</span>
+        </span>
+        <span className="countdown-seconds flex items-end">
+          <span className="js-countdown-seconds-number">{seconds}</span>
+          <span className="block tracking-tight">s</span>
+        </span>
+      </div>
     );
   }
 };
 
-const items_Countdown_timer = ({ time = 500000, onCountDownComplete }) => {
-  return <Countdown date={Date.now() + time} renderer={renderer} onComplete={onCountDownComplete}></Countdown>;
+const Items_Countdown_timer = ({
+  time = 500000,
+  onCountDownComplete,
+  className,
+}) => {
+  return (
+    <Countdown
+      className={className}
+      date={Date.now() + time}
+      renderer={renderer}
+      onComplete={onCountDownComplete}
+    />
+  );
 };
 
-export default items_Countdown_timer;
+export default Items_Countdown_timer;

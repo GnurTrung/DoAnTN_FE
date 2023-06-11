@@ -62,7 +62,7 @@ const OfferTable = () => {
                 <li
                   key={index}
                   className={cx(
-                    "grid rounded-2xl bg-[#2A294F] items-center p-4 text-sm mb-2 font-semibold",
+                    "grid rounded-2xl bg-[#1B2333] items-center p-4 text-sm mb-2 font-semibold",
                     {
                       "grid-cols-5": dataOnchain?.owner === account || hasOffer,
                       "grid-cols-4": !(
@@ -96,7 +96,7 @@ const OfferTable = () => {
                   </span>
                   {dataOnchain?.owner === account && (
                     <span
-                      className="text-[#D558FF] cursor-pointer font-semibold"
+                      className="text-[#9998AC] cursor-pointer font-semibold"
                       onClick={() =>
                         onShowAcceptOffer({
                           dataNFT: dataOnchain,
@@ -110,7 +110,7 @@ const OfferTable = () => {
                   )}
                   {userAddress === account && (
                     <span
-                      className="text-[#D558FF] cursor-pointer font-semibold"
+                      className="text-[#9998AC] cursor-pointer font-semibold"
                       onClick={() =>
                         onShowCancelOffer({
                           dataNFT: dataOnchain,

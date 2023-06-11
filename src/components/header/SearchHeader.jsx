@@ -76,7 +76,7 @@ const SearchHeader = ({ showSearch, setShowSearch }) => {
   const CollectionItem = ({ logo, name, total_items, address }) => {
     return (
       <Link to={`/collection/${address}`}>
-        <div className="flex items-center space-x-2 cursor-pointer group rounded-2xl hover:bg-[#323268] p-3 w-full">
+        <div className="flex items-center space-x-2 cursor-pointer group rounded-2xl hover:bg-[#364055] p-3 w-full">
           <img
             src={logo}
             alt="Logo"
@@ -98,7 +98,7 @@ const SearchHeader = ({ showSearch, setShowSearch }) => {
   const NftItem = ({ image_url, title, nft_address, collection_name }) => {
     return (
       <Link to={`/nft/${nft_address}`}>
-        <div className="flex items-center space-x-2 cursor-pointer group rounded-2xl hover:bg-[#323268] p-3 w-full">
+        <div className="flex items-center space-x-2 cursor-pointer group rounded-2xl hover:bg-[#364055] p-3 w-full">
           <img
             src={image_url}
             alt="Logo"
@@ -125,7 +125,7 @@ const SearchHeader = ({ showSearch, setShowSearch }) => {
       })}
     >
       <div
-        className={cx("flex !bg-[#1F1D43] w-full space-x-3", {
+        className={cx("flex !bg-[#131924] w-full space-x-3", {
           "p-4": showInputMobile,
         })}
       >
@@ -155,7 +155,7 @@ const SearchHeader = ({ showSearch, setShowSearch }) => {
           block: Boolean(text),
           hidden: !Boolean(text) && !showInputMobile,
           "!relative": showInputMobile,
-          "absolute right-0 top-14 rounded-2xl border border-white border-solid bg-[#2A294F] max-h-[480px]":
+          "absolute right-0 top-14 rounded-2xl border border-white border-solid bg-[#1B2333] max-h-[480px]":
             !showInputMobile,
         })}
       >
@@ -164,8 +164,8 @@ const SearchHeader = ({ showSearch, setShowSearch }) => {
             <button
               onClick={() => onChangeFilter(FILTER_OPTIONS.COLLECTIONS)}
               className={cx(
-                "h-9 rounded-[2rem] flex justify-center items-center border border-solid border-[#4E4D6E] font-semibold text-sm px-4 py-2 cursor-pointer hover:bg-[#323268] hover:border-none",
-                { "bg-[#323268]": filter === FILTER_OPTIONS.COLLECTIONS }
+                "h-9 rounded-[2rem] flex justify-center items-center border border-solid border-[#4E4D6E] font-semibold text-sm px-4 py-2 cursor-pointer hover:bg-[#364055] hover:border-none",
+                { "bg-[#364055]": filter === FILTER_OPTIONS.COLLECTIONS }
               )}
             >
               Collections
@@ -173,8 +173,8 @@ const SearchHeader = ({ showSearch, setShowSearch }) => {
             <button
               onClick={() => onChangeFilter(FILTER_OPTIONS.ITEMS)}
               className={cx(
-                "h-9 rounded-[2rem] flex justify-center items-center border border-solid border-[#4E4D6E] font-semibold text-sm px-4 py-2 cursor-pointer hover:bg-[#323268] hover:border-none",
-                { "bg-[#323268]": filter === FILTER_OPTIONS.ITEMS }
+                "h-9 rounded-[2rem] flex justify-center items-center border border-solid border-[#4E4D6E] font-semibold text-sm px-4 py-2 cursor-pointer hover:bg-[#364055] hover:border-none",
+                { "bg-[#364055]": filter === FILTER_OPTIONS.ITEMS }
               )}
             >
               Items
@@ -237,7 +237,7 @@ const SearchHeader = ({ showSearch, setShowSearch }) => {
       <div
         onClick={onShowSearch}
         className={cx(
-          "icon bg-[#2a294f] w-[3.2rem] h-[3.2rem] flex justify-center items-center rounded-full group cursor-pointer hover:bg-[#323268]",
+          "icon bg-[#1B2333] w-[3.2rem] h-[3.2rem] flex justify-center items-center rounded-full group cursor-pointer hover:bg-[#364055]",
           { "!hidden": showSearch || showInputMobile }
         )}
       >

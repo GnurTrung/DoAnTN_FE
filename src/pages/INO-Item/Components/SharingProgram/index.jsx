@@ -53,12 +53,12 @@ const SharingProgram = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-10 pb-5 gap-y-5">
       <div className="col-span-1 lg:col-span-4 xxl:col-span-5 flex flex-col space-y-5">
-        {/* <div className="bg-[#1F1D43] rounded-2xl p-5">
+        {/* <div className="bg-[#131924] rounded-2xl p-5">
           <h3 className="text-white text-xl font-semibold leading-8">
             Leaderboard
           </h3>
         </div> */}
-        <div className="bg-[#1F1D43] rounded-2xl p-5">
+        <div className="bg-[#131924] rounded-2xl p-5">
           <div className="flex items-center justify-between">
             <div className="flex flex-col space-y-1">
               <h3 className="text-white text-xl font-semibold leading-8">
@@ -70,7 +70,7 @@ const SharingProgram = () => {
                 )} UTC`}
               </span>
             </div>
-            <div className="bg-[#2A294F] flex flex-col items-center justify-center space-y-1 py-4 w-52 rounded-2xl">
+            <div className="bg-[#1B2333] flex flex-col items-center justify-center space-y-1 py-4 w-52 rounded-2xl">
               <span className="text-sm font-medium leading-5 text-[#BABAC7]">
                 Total Prizes
               </span>
@@ -83,7 +83,7 @@ const SharingProgram = () => {
         </div>
       </div>
       <div className="col-span-1 lg:col-span-6 xxl:col-span-5 md:pl-0 lg:pl-[3.75rem]">
-        <div className="bg-[#1F1D43] rounded-2xl p-5">
+        <div className="bg-[#131924] rounded-2xl p-5">
           <h3 className="text-white text-xl font-semibold leading-8">
             Tocen Sharing Program
           </h3>

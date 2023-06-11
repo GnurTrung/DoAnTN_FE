@@ -3,7 +3,7 @@ import React from "react";
 
 const ProductSkeleton = ({ action }) => {
   return (
-    <div className="w-full bg-[#1F1D43] rounded-2xl">
+    <div className="w-full bg-[#131924] rounded-2xl">
       <Skeleton.Button
         shape="square"
         active

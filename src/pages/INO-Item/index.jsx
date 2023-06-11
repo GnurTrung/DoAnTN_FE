@@ -15,7 +15,7 @@ import { isDateGreater } from "utils/date-time";
 
 INODetail.propTypes = {};
 function INODetail() {
-  const { nftData, shareObject, nftDataPool } = useNftDetailContext();
+  const { nftData, shareObject } = useNftDetailContext();
   const banner = getLogoURL(
     nftData?.attributes?.banner?.data[0]?.attributes?.url
   );
@@ -64,10 +64,10 @@ function INODetail() {
               <div className="thumb-pagetitle relative">
                 <Image
                   src={banner}
-                  className="!object-cover md:aspect-[3.5/1] w-full !min-h-[300px]"
+                  className="!object-cover md:aspect-[4/1] w-full !min-h-[300px]"
                   wrapperClassName="w-full"
                 />
-                <button className="bg-[#2A294F] !rounded-xl backdrop-blur-[5.5px] py-4 px-8 font-semibold text-white flex flex-row absolute bottom-8 right-10">
+                <button className="bg-[#1B2333] !rounded-xl backdrop-blur-[5.5px] py-4 px-8 font-semibold text-white flex flex-row absolute bottom-8 right-10">
                   <div>
                     {(
                       nftData?.attributes?.collectionStatus || ""

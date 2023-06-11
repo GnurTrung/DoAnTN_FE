@@ -85,7 +85,7 @@ const Explore = () => {
                 </h4>
               </div>
             </div>
-            <div className="bg-[#1F1D43] border-jacarta-600 rounded-2xl border  py-4 px-8 mt-6">
+            <div className="bg-[#131924] border-jacarta-600 rounded-2xl border  py-4 px-8 mt-6">
               <div className="mb-2">
                 <div className="mt-6">
                   <div>
@@ -145,7 +145,7 @@ const Explore = () => {
                   Personal Information
                 </h4>
               </div>
-              <div className="bg-[#1F1D43] border-jacarta-600 rounded-2xl border py-4 px-8 mt-6">
+              <div className="bg-[#131924] border-jacarta-600 rounded-2xl border py-4 px-8 mt-6">
                 <div className="mb-2">
                   <div className="mt-6">
                     <div>

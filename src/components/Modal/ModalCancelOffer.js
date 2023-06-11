@@ -40,7 +40,7 @@ const ModalCancelOffer = (props) => {
         <h4 className="text-base font-semibold text-[white] leading-6 mb-3">
           Are you sure you want to cancel your offer?
         </h4>
-        <div className="flex flex-col items-start p-3 bg-[#2A294F] rounded-2xl w-full divide-x divide-[#4E4D6E]">
+        <div className="flex flex-col items-start p-3 bg-[#1B2333] rounded-2xl w-full divide-x divide-[#4E4D6E]">
           <div className="flex justify-start items-center space-x-3">
             <Image
               src={props?.nft?.imageUrl}

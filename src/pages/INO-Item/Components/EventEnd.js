@@ -4,7 +4,7 @@ const EvenEnd = () => {
         Event Ended
     </span>
     <div
-        className="mt-2 js-countdown-single-timer flex space-x-4 bg-[#2A294F] w-full rounded-2xl justify-center py-2"
+        className="mt-2 js-countdown-single-timer flex space-x-4 w-full rounded-2xl justify-center py-2"
         data-countdown="2022-09-07T19:40:30"
         data-expired="This auction has ended"
     >

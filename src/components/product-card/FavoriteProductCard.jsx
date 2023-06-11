@@ -7,7 +7,7 @@ import { VERIFIED_TYPE } from "constants";
 import IconVerified from "assets/icons/IconVerified";
 const FavoriteProductCard = ({ imageUrl, title, ownerAddress, verify }) => {
   return (
-    <div className="flex flex-col rounded-2xl bg-[#1F1D43] group cursor-pointer">
+    <div className="flex flex-col rounded-2xl bg-[#131924] group cursor-pointer">
       <div className="overflow-hidden aspect-square max-h-80 w-full rounded-t-2xl">
         <Image
           src={imageUrl}

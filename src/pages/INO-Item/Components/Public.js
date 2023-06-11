@@ -158,7 +158,7 @@ const Public = () => {
   return (
     <>
       {publicAccountLimit > 0 && (
-        <div className="bg-[#1F1D43] border-jacarta-600  rounded-2xl border mt-2 py-4 px-6">
+        <div className="bg-[#131924] border-jacarta-600  rounded-2xl border mt-2 py-4 px-6">
           <div>
             <span className=" text-xl text-white mt-1 font-display font-semibold">
               {publicName}
@@ -238,7 +238,7 @@ const Public = () => {
                   <span className="mt-2 mb-2 text-[14px] text-white font-display font-semibold">
                     Starts In:
                   </span>
-                  <div className="bg-[#2A294F] w-full rounded-2xl">
+                  <div className="w-full rounded-2xl">
                     <Items_Countdown_timer
                       time={new Date(publicStartTime) - new Date()}
                       onCountDownComplete={handleCompletePL}
@@ -251,7 +251,7 @@ const Public = () => {
                   <span className=" text-[14px] text-white font-display font-semibold mt-2 mb-2">
                     Ends In:
                   </span>
-                  <div className="bg-[#2A294F] w-full rounded-2xl">
+                  <div className="w-full rounded-2xl">
                     <Items_Countdown_timer
                       time={new Date(publicEndTime) - new Date()}
                     />

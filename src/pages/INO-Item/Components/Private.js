@@ -83,7 +83,7 @@ const Private = () => {
   return (
     <>
       {attributes?.collectionInfo?.privateAccountLimit > 0 && (
-        <div className="bg-[#1F1D43] border-jacarta-600 rounded-2xl border py-4 px-6 mt-2">
+        <div className="bg-[#131924] border-jacarta-600 rounded-2xl border py-4 px-6 mt-2">
           <div>
             <span className=" text-xl text-white mt-1 font-display font-semibold">
               {privateName}
@@ -147,13 +147,13 @@ const Private = () => {
               </div>
             </div>
 
-            <div className="flex justify-start flex-col mt-2 sm:mt-0 sm:w-1/2 sm:border-l sm:pl-4  lg:pl-4  border-solid !border-[#4E4D6E] border-l">
+            <div className="flex justify-start flex-col sm:border-jacarta-100 mt-2 sm:mt-0 sm:w-1/2 sm:border-l sm:pl-4 lg:pl-4 border-solid !border-[#4E4D6E] md:border-l border-l-0">
               {isDateGreater(new Date(privateStartTime), new Date()) && (
                 <>
                   <span className="mt-2 text-[14px] text-white font-display font-semibold mb-2">
                     Starts In:
                   </span>
-                  <div className="bg-[#2A294F] w-full rounded-2xl">
+                  <div className="w-full rounded-2xl">
                     <Items_Countdown_timer
                       time={new Date(privateStartTime) - new Date()}
                       onCountDownComplete={handleComplete}
@@ -166,7 +166,7 @@ const Private = () => {
                   <span className=" text-[14px] text-white font-display font-semibold mt-2 mb-2">
                     Ends In:
                   </span>
-                  <div className="bg-[#2A294F] w-full rounded-2xl">
+                  <div className="w-full rounded-2xl">
                     <Items_Countdown_timer
                       time={new Date(privateEndTime) - new Date()}
                     />

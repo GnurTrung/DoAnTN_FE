@@ -58,7 +58,7 @@ const ModalMakeOffer = (props) => {
     >
       <div className="w-full p-5">
         <div className="flex flex-col space-y-5">
-          <div className="flex flex-col items-start p-3 bg-[#2A294F] rounded-2xl w-full divide-x divide-[#4E4D6E]">
+          <div className="flex flex-col items-start p-3 bg-[#1B2333] rounded-2xl w-full divide-x divide-[#4E4D6E]">
             <div className="flex justify-start items-center space-x-3">
               <Image
                 src={props?.nft?.imageUrl}

@@ -4,19 +4,19 @@
 
 @layer components {
   .btn-primary {
-    @apply rounded-[32px] h-12 px-5 flex justify-center items-center font-semibold text-base text-white border-none hover:bg-white hover:!text-accent hover:shadow-none cursor-pointer hover:bg-none;
+    @apply rounded-[32px]  h-12 px-5 flex justify-center items-center font-semibold text-base text-white border-none hover:bg-white hover:!text-accent hover:shadow-none cursor-pointer hover:bg-none;
     background: linear-gradient(101.63deg, #9a7af5 5.27%, #6b3feb 93.14%);
     box-shadow: 0px 0px 30px 10px rgba(131, 88, 255, 0.25);
   }
 
   button.btn-primary[disabled],
   button.btn-secondary[disabled] {
-    @apply bg-[#323268] text-[#9998AC];
+    @apply bg-[#364055] text-[#9998AC];
     background-image: none;
   }
 
   .btn-secondary {
-    @apply rounded-[32px] h-12 px-5 flex justify-center items-center font-semibold text-base border-none bg-[#2A294F] text-[#BABAC7] hover:bg-[#323268] hover:!text-white;
+    @apply rounded-[32px] h-12 px-5 flex justify-center items-center font-semibold text-base border-none bg-[#1B2333] text-[#BABAC7] hover:bg-[#364055] hover:!text-white;
   }
 
   .tag-status {

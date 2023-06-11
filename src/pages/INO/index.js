@@ -13,7 +13,7 @@ const INOImpl = () => {
         <button>
           <div
             className={
-              (item.id != activeID) ? 'bg-[#2A294F] text-[#BABAC7] hover:bg-[#323268] flex items-center w-full rounded-full border h-10 px-8 dark:border-transparent global-title font-semibold text-base'
+              (item.id != activeID) ? 'bg-[#1B2333] text-[#BABAC7] hover:bg-[#364055] flex items-center w-full rounded-full border h-10 px-8 dark:border-transparent global-title font-semibold text-base'
                 : 'group bg-accent global-title flex h-10 items-center rounded-full px-8 text-white font-semibold text-base'
             }
           >

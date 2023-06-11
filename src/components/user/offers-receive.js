@@ -107,12 +107,12 @@ const OffersReceive = () => {
                     nftAddress={offer.nftAddress}
                   />
                 }
-                className="!rounded-2xl bg-[#2A294F] offer-receive-header mb-4"
+                className="!rounded-2xl bg-[#1B2333] offer-receive-header mb-4"
               >
                 {offer.offerList.map((offerDetail, i) => (
                   <div
                     key={i}
-                    className="flex justify-between items-center pl-8 py-5 cursor-pointer hover:bg-[#2A294F] transition duration-100 ease-out"
+                    className="flex justify-between items-center pl-8 py-5 cursor-pointer hover:bg-[#1B2333] transition duration-100 ease-out"
                   >
                     <div className="flex flex-col ">
                       <span className="text-sm leading-5 font-semibold text-white mb-1">

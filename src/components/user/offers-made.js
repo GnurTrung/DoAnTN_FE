@@ -63,7 +63,7 @@ const OffersMade = () => {
   const Offer = (props) => {
     const { image, name, price, timestamp, expire, nftAddress } = props;
     return (
-      <div className="bg-[#1F1D43] rounded-2xl p-5 flex items-center justify-between mb-4">
+      <div className="bg-[#131924] rounded-2xl p-5 flex items-center justify-between mb-4">
         <Link to={`/nft/${nftAddress}`}>
           <div className="flex justify-start items-center group cursor-pointer">
             <Image

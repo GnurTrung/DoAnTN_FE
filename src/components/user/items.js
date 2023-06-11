@@ -296,7 +296,7 @@ const Items = () => {
         <div className="left-option !basis-full lg:!basis-[65%]">
           <Button
             className={cx("btn-secondary mr-4", {
-              "bg-[#323268] text-white": isFilterShown,
+              "bg-[#364055] text-white": isFilterShown,
             })}
             onClick={toggleFilter}
           >
@@ -327,8 +327,8 @@ const Items = () => {
             <li>
               <button
                 className={cx(
-                  "cursor-pointer w-[3rem] h-[3rem] rounded-full flex justify-center items-center mr-4  bg-[#2A294F] hover:bg-[#323268]",
-                  { "bg-[#323268] focus:bg-[#323268]": !isOnSmallGridMode }
+                  "cursor-pointer w-[3rem] h-[3rem] rounded-full flex justify-center items-center mr-4  bg-[#1B2333] hover:bg-[#364055]",
+                  { "bg-[#364055] focus:bg-[#364055]": !isOnSmallGridMode }
                 )}
                 onClick={() => changeGridMode(false)}
               >
@@ -338,8 +338,8 @@ const Items = () => {
             <li>
               <button
                 className={cx(
-                  "cursor-pointer w-[3rem] h-[3rem] rounded-full flex justify-center items-center bg-[#2A294F] hover:bg-[#323268]",
-                  { "bg-[#323268] focus:bg-[#323268]": isOnSmallGridMode }
+                  "cursor-pointer w-[3rem] h-[3rem] rounded-full flex justify-center items-center bg-[#1B2333] hover:bg-[#364055]",
+                  { "bg-[#364055] focus:bg-[#364055]": isOnSmallGridMode }
                 )}
                 onClick={() => changeGridMode(true)}
               >
@@ -424,7 +424,7 @@ const Items = () => {
           </Checkbox.Group>
         </div>
         {!!bulkAction && (
-          <div className="bg-[#1F1D43] rounded-2xl col-span-3 h-fit">
+          <div className="bg-[#131924] rounded-2xl col-span-3 h-fit">
             <div className="border-b border-solid border-[#4E4D6E] p-5 flex items-center justify-between">
               <span className="text-white font-semibold text-base">
                 Bulk Listing
@@ -453,7 +453,7 @@ const Items = () => {
                       Price for all
                     </p>
                     <input
-                      className="bg-[#323268] rounded-2xl text-sm px-3 py-2 w-full"
+                      className="bg-[#364055] rounded-2xl text-sm px-3 py-2 w-full"
                       placeholder="Enter Price For All Items"
                       value={priceForAll}
                       pattern="[0-9\.]*$"
@@ -465,7 +465,7 @@ const Items = () => {
                   {userNFTOff?.data
                     ?.filter((nft) => selectedNft.includes(nft.nftId))
                     ?.map((nftDetail, index) => (
-                      <div className="rounded-2xl p-3 bg-[#2A294F]">
+                      <div className="rounded-2xl p-3 bg-[#1B2333]">
                         <div
                           className="flex items-center justify-between w-full"
                           key={index}
@@ -504,7 +504,7 @@ const Items = () => {
                                   Price (SUI)
                                 </span>
                                 <input
-                                  className="bg-[#323268] rounded-2xl text-sm px-3 py-2 w-full"
+                                  className="bg-[#364055] rounded-2xl text-sm px-3 py-2 w-full"
                                   placeholder="Enter Price"
                                   value={selectedNftWithPrice[nftDetail?.nftId]}
                                   pattern="[0-9\.]*$"

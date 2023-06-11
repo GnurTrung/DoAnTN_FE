@@ -99,7 +99,7 @@ const VerifyAccount = (data) => {
         <>
             <section className="">
                 <div className="row pt-1">
-                    <div className="bg-[#1F1D43] border-jacarta-600 rounded-2xl border  py-4 px-8 mt-6">
+                    <div className="bg-[#131924] border-jacarta-600 rounded-2xl border  py-4 px-8 mt-6">
                         <div className="flex flex-row">
                             <img src={Verify} alt="verify" />
                             <div className="flex justify-between items-center flex-col sm:flex-row gap-[1rem]">

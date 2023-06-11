@@ -11,5 +11,6 @@ export default (
         <Route path='/profile/:id' />
         <Route path='/edit-profile/:id' />
         <Route path='/verify-account/:id' />
+        <Route path='/ranking' />
     </Route>
 );
