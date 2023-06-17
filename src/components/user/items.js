@@ -1,4 +1,4 @@
-import { Button, Checkbox, Collapse, Radio } from "antd";
+import { Button, Checkbox, Collapse } from "antd";
 import IconExpand from "assets/icons/drawer/IconExpand";
 import IconFilter from "assets/icons/IconFilter";
 import IconGridMedium from "assets/icons/IconGridMedium";

@@ -1,9 +1,5 @@
 import Image from "components/ProgressiveImage";
 import { useState } from "react";
-import { Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { mystToSui } from "utils/wallet-utils";
-import styles from "./Modal.module.css";
 import CartModal from "components/layouts/CardModal";
 import { Button } from "antd";
 import IconSpin from "assets/icons/IconSpin";

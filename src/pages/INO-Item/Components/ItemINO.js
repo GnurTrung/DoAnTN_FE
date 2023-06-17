@@ -1,10 +1,6 @@
 import Image from "components/ProgressiveImage.js";
-import { useWeb3 } from "contexts/useWeb3Context";
 import { getLogoURL } from "helpers/url-helper";
-import { useEffect } from "react";
 import { useNftDetailContext } from "../context.js";
-import VerifyAccount from "./Task.js";
-import RefCode from "./RefCode.js";
 import Mintlist from "./Mintlist.js";
 import Public from "./Public.js";
 import Private from "./Private.js";
@@ -15,27 +11,15 @@ import moment from "moment";
 import IconInfo from "assets/icons/IconInfo.jsx";
 
 const ItemINO = (data) => {
-  const { account } = useWeb3();
   const {
-    accNftData,
     showModalWaitingForSignature,
     onHideModalWaitingForSignature,
   } = useNftDetailContext();
   const attributes = data?.data?.attributes;
   const urlLogo = getLogoURL(attributes?.otherImages?.data[0]?.attributes?.url);
   const level = attributes?.level;
-  const code = attributes?.code;
-  const totalAccountMint = account
-    ? (accNftData[`${code}`]?.public || 0) +
-      (accNftData[`${code}`]?.whitelist || 0) +
-      (accNftData[`${code}`]?.private || 0) +
-      (accNftData[`${code}`]?.holder || 0)
-    : 0;
-
-  const prizePool = attributes?.totalPrize;
 
   const getUnixTime = (idx) => {
-    // if()
     return new Date(idx).getTime();
   };
   const arr = [
@@ -50,24 +34,6 @@ const ItemINO = (data) => {
     },
     { time: getUnixTime(attributes?.privateStartTime), component: <Private /> },
   ];
-
-  const getEndTime = () => {
-    try {
-      const arr = [
-        getUnixTime(attributes?.publicEndTime),
-        getUnixTime(attributes?.keyHolderEndTime),
-        getUnixTime(attributes?.whitelistEndTime),
-        getUnixTime(attributes?.privateEndTime),
-      ];
-      const arrSort = arr
-        .filter((x) => x != 0)
-        .sort()
-        .reverse();
-      return arrSort[0];
-    } catch (ex) {
-      console.log(ex);
-    }
-  };
 
   const getStartTime = () => {
     try {
@@ -113,16 +79,6 @@ const ItemINO = (data) => {
         {arrSort.map((item, index) => (
           <div key={index}>{item.component}</div>
         ))}
-        {/* {attributes?.collectionInfo?.publicAccountLimit != 0 && (
-          <VerifyAccount data={attributes} />
-        )} */}
-        {account &&
-          totalAccountMint > 0 &&
-          prizePool != 0 &&
-          prizePool &&
-          !isDateGreater(new Date().getTime, new Date(getEndTime())) && (
-            <RefCode />
-          )}
       </div>
       <ModalWaitingForSignature
         show={showModalWaitingForSignature}

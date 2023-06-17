@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import BaseSocket from "services/socket";
 import { useWeb3 } from "./useWeb3Context";
-import { io } from "socket.io-client";
 const SocketContext = React.createContext();
 export const useSocketContext = () => useContext(SocketContext);
 
@@ -10,7 +9,6 @@ const SocketProvider = ({ children }) => {
   const { isAuthenticated, account } = useWeb3();
   useEffect(() => {
     if (isAuthenticated) {
-      console.log("Initialize socket!");
       const instance = new BaseSocket();
       instance.joinRoom(account);
       setSocketInstance(instance);

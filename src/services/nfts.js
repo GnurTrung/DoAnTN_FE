@@ -22,7 +22,7 @@ export const likeNftApi = async ({ nftAddress }) => {
 };
 
 const URL = process.env.REACT_APP_API_URL + "/";
-const URLCMS = process.env.REACT_APP_CMS_URL + "/"; // "https://cms-staging.tocen.co/api/";
+const URLCMS = process.env.REACT_APP_CMS_URL + "/"; 
 
 export const getLaunchpadDrop = async () => {
   try {
@@ -59,39 +59,6 @@ export const getNFTINOAll = async () => {
   return { data: [], meta: {} };
 };
 
-export const getNFTINOActive = async () => {
-  try {
-    const url = `${URLCMS}nft-collections/?populate=*&filters[collectionStatus][$eq]=Active`;
-    const response = await getCMSAsync(url);
-    const { data } = response;
-    return data;
-  } catch (ex) {
-    console.log(ex);
-  }
-  return { data: [], meta: {} };
-};
-export const getNFTINOUpcoming = async () => {
-  try {
-    const url = `${URLCMS}nft-collections/?populate=*&filters[collectionStatus][$eq]=Upcoming`;
-    const response = await getCMSAsync(url);
-    const { data } = response;
-    return data;
-  } catch (ex) {
-    console.log(ex);
-  }
-  return { data: [], meta: {} };
-};
-export const getNFTINOCompleted = async () => {
-  try {
-    const url = `${URLCMS}nft-collections/?populate=*&filters[collectionStatus][$eq]=Completed`;
-    const response = await getCMSAsync(url);
-    const { data } = response;
-    return data;
-  } catch (ex) {
-    console.log(ex);
-  }
-  return { data: [], meta: {} };
-};
 export const getINOPool = async (options) => {
   const url = `${URL}ino/get-pool`;
   try {
@@ -169,19 +136,6 @@ export const getRankINO = async (params) => {
       project: params?.id,
       page: params?.page,
       limit: params?.limit,
-    });
-    const { data } = response;
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-  return { data: [], meta: {} };
-};
-
-export const getNftsByAddressArrayApi = async (addresses) => {
-  try {
-    const response = await postAsync("/nft/detail-cart", {
-      nftArray: addresses,
     });
     const { data } = response;
     return data;

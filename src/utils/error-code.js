@@ -13,7 +13,6 @@ export const ERRORS = [
   { code: 10, message: "You are not eligible!" },
   { code: 11, message: "Event hasn't happened yet!" },
   { code: 12, message: "Can't verify your signature!" },
-  // { code: 7, message: "You only mint 1 NFT!" },
 ];
 export const getMessageError = (error) => {
   let messageDefault = "Oops! There are some errors";
@@ -38,7 +37,6 @@ export const getMessageError = (error) => {
 };
 
 export const getMessageErrorBlock = (response) => {
-  console.log("response", response);
   if (!response) {
     toast.error("Error: No response!");
   }

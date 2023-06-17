@@ -13,12 +13,6 @@ import {
 } from "react";
 import { useParams } from "react-router";
 import { likeNftApi } from "services/nfts";
-import {
-  getFavoriteNftsApi,
-  getOfferMadeApi,
-  getOfferReceivedApi,
-  getWatchlistApi,
-} from "services/user";
 import { getListNFTOff } from "services/userNFT";
 
 export const UserContext = createContext();
@@ -58,21 +52,6 @@ export const TABS_BY_NAME = {
   auction: 4,
 };
 
-export const OPTIONS_PERIOD = [
-  {
-    label: "24H",
-    value: "1d",
-  },
-  {
-    label: "7D",
-    value: "7d",
-  },
-  {
-    label: "1M",
-    value: "1m",
-  },
-];
-
 export const OPTION_HIGHEST = [
   {
     label: "Highest Volume",
@@ -96,7 +75,6 @@ export const Provider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [userNFT, setUserNFT] = useState([]);
   const [paramsSearch, setParamsSearch] = useState(DEFAULT_SEARCH_PARAMS);
-  const [offerMade, setOfferMade] = useState({ data: [], nextPage: false });
   const [userNFTOff, setUserNFTOff] = useState({ data: [], nextPage: false });
   const [pagination, setPagination] = useState({
     page: 1,
@@ -105,18 +83,6 @@ export const Provider = ({ children }) => {
   const [activityStatus, setActivityStatus] = useState([]);
   const [tab, setTab] = useState(0);
   const { account } = useWeb3();
-  const [offerReceived, setOfferReceived] = useState({
-    data: [],
-    nextPage: false,
-  });
-  const [favoriteNfts, setFavoriteNfts] = useState({
-    data: [],
-    nextPage: false,
-  });
-  const [watchlistSort, setWatchlistSort] = useState({
-    period: OPTIONS_PERIOD[0].value,
-    sort: OPTION_HIGHEST[0].value,
-  });
 
   const queries = useQuery();
   const { redirectToPage } = useRedirect();
@@ -182,17 +148,12 @@ export const Provider = ({ children }) => {
       activityStatus,
       setTab,
       onSelectTab,
-      offerMade,
       loadMore,
       userNFTOff,
       paramsSearch,
       setParamsSearch,
       pagination,
-      offerReceived,
-      favoriteNfts,
       tab,
-      watchlistSort,
-      setWatchlistSort,
       handleLikeNft,
     };
   }, [
@@ -201,14 +162,10 @@ export const Provider = ({ children }) => {
     collectionDetail,
     id,
     activityStatus,
-    offerMade,
     userNFTOff,
     paramsSearch,
     pagination,
-    offerReceived,
-    favoriteNfts,
     tab,
-    watchlistSort,
     handleLikeNft,
     redirectToPage,
   ]);

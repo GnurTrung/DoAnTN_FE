@@ -21,7 +21,6 @@ const ModalListingNFT = (props) => {
   const [price, setPrice] = useState(props?.nft?.floorPriceListing || 1);
   const [isValid, setIsValid] = useState(true);
   const [processing, setProcessing] = useState(false);
-  const { balance } = useWeb3();
   const [period, setPeriod] = useState(OFFER_OPTIONS[0].value);
   const [isListingDisabled, setIsListingDisabled] = useState(false);
   const [royaltyFee, setRoyaltyFee] = useState(5);

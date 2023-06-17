@@ -2,7 +2,7 @@ import { JsonRpcProvider } from "@mysten/sui.js";
 import { NFT_STATUS } from "constants/nft-action";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { FULLNODE, SUIET_NAME } from "../constants/wallets";
+import { FULLNODE } from "../constants/wallets";
 import useNetwork from "../hooks/useNetwork";
 
 const useProviderSigner = (wallet) => {
@@ -118,7 +118,6 @@ const useProviderSigner = (wallet) => {
     }
     return results;
   };
-
 
   const getNFT = async (address, cursor = "") => {
     try {
@@ -248,7 +247,7 @@ const useProviderSigner = (wallet) => {
     formatNFTResponse,
     getNetWork,
     getBalanceByCoinType,
-    getAllCoins
+    getAllCoins,
   };
 };
 

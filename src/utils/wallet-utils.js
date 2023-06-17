@@ -5,9 +5,7 @@ export const formatWallet = (address) => {
     const length = address.length;
     const offset = 5;
     return `${address.substring(0, offset)}...${address.substring(length - offset, length)}`
-
 }
-
 export const mystToSui = (price) => {
     if (!price)
         return '--'

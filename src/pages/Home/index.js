@@ -1,6 +1,4 @@
 import { Banner, LaunchpadDrop } from "./Components";
-
-import dataBanner from "assets/fake-data/data-banner";
 import Meta from "components/Meta";
 import Marquees from "./Components/Marquees";
 import Ranking from "pages/Ranking";
@@ -12,7 +10,7 @@ const Home = () => {
       <div className="">
         <div id="page">
           <Marquees />
-          <Banner data={dataBanner} />
+          <Banner />
           <LaunchpadDrop />
           <Ranking />
         </div>

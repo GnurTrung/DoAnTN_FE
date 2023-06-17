@@ -37,7 +37,6 @@ async function refreshToken() {
     const refreshToken = getCookie(REFRESH_TOKEN);
     const accessToken = getCookie(ACCESS_TOKEN);
     const address = getData(ACCOUNT_ADDRESS);
-    // console.log('ACCOUNT_ADDRESS', address);
     const data = {
       accessToken,
       refreshToken,
@@ -45,7 +44,6 @@ async function refreshToken() {
     };
     return axios({
       method: "POST",
-      // url: "http://localhost:8000/api/auth/refresh_token",
       url: process.env.REACT_APP_API_URL + "/auth/refresh_token",
       data,
     });
@@ -57,14 +55,11 @@ async function refreshToken() {
 function setCookie(name, value, options = {}) {
   options = {
     path: "/",
-    // add other defaults here if necessary
     ...options,
   };
-
   if (options.expires instanceof Date) {
     options.expires = options.expires.toUTCString();
   }
-
   let updatedCookie =
     encodeURIComponent(name) + "=" + encodeURIComponent(value);
 
@@ -75,25 +70,17 @@ function setCookie(name, value, options = {}) {
       updatedCookie += "=" + optionValue;
     }
   }
-
   document.cookie = updatedCookie;
 }
 
 export function refreshTokenFunc(error) {
-  // const { response, config } = error;
   return refreshToken()
     .then((response) => {
       const { data } = response;
-      // if (!data)
-      //     return Promise.reject(error)
       const accessToken = data.access_token;
       const refreshToken = data.refresh_token;
-      const expireIn = data.expires_in || 86400;
-      //const config = response.config;
       if (accessToken && refreshToken) {
-        //save token
         setCookie(ACCESS_TOKEN, accessToken, cookieSetting);
-
         setCookie(REFRESH_TOKEN, refreshToken, cookieSetting);
       }
       return response;
@@ -112,8 +99,6 @@ AxiosInstance.interceptors.response.use(
     if (response) {
       const { status } = response;
       if (status === 401 && getCookie("refresh_token") && !config._retry) {
-        // 401
-        // get new token
         if (isRefreshing) {
           return new Promise(function (resolve, reject) {
             failedQueue.push({ resolve, reject });
@@ -126,28 +111,18 @@ AxiosInstance.interceptors.response.use(
               return Promise.reject(err);
             });
         }
-
         config._retry = true;
         isRefreshing = true;
-
         return refreshToken()
           .then((response) => {
             const { data } = response;
-
             if (!data || !data.success) return Promise.reject(error);
             const accessToken = data.data.token;
             const refreshToken = data.data.refreshToken;
-            const expireIn = data.data.expires_in || 3600;
-            //const config = response.config;
-
             if (accessToken && refreshToken) {
-              //save token
               setCookie(ACCESS_TOKEN, accessToken, cookieSetting);
-
               setCookie(REFRESH_TOKEN, refreshToken, cookieSetting);
-
               processQueue(null, accessToken);
-
               if (config) {
                 config.headers["Authorization"] = "Bearer " + accessToken;
                 return AxiosInstance(config);

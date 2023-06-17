@@ -11,13 +11,11 @@ import { formatPrice, removeDotAcceptFirst } from "utils";
 import { NumericFormat } from "react-number-format";
 
 const ModalMakeOffer = (props) => {
-  const { onMakeOffer, onChangeGas } = props;
+  const { onMakeOffer} = props;
   const [price, setPrice] = useState(1);
   const [isValid, setIsValid] = useState(true);
   const [processing, setProcessing] = useState(false);
-  const { balance } = useWeb3();
   const [period, setPeriod] = useState(OFFER_OPTIONS[0].value);
-  //const [gas, setGas] = useState(0)
 
   const onInputChange = (e) => {
     if (!e.target.validity.valid) setPrice((v) => v);
