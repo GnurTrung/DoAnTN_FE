@@ -3,7 +3,6 @@ export const dateTimeFormat = (stringTime) => {
         return ''
     const date = stringTime.split('T')[0]
     const time = stringTime.split('T')[1]
-    const year = date.split('-')[0]
     const month = date.split('-')[1]
     const day = date.split('-')[2]
     const timeFormat = time.split('.')[0]

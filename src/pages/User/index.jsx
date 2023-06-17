@@ -17,6 +17,7 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { formatWallet } from "utils/wallet-utils";
 import DefaultAvatar from "../../assets/images/author/default-avatar.png";
 import { Provider, useContexts } from "./context";
+import { toast } from "react-hot-toast";
 const { Paragraph } = Typography;
 
 Collection.propTypes = {};
@@ -58,16 +59,9 @@ function Collection() {
                   </div>
                 </div>
               </div>
-              {/* <div className="desc">
-              <ReadMore content={userNFT?.description} />
-            </div> */}
             </div>
             <div className="!flex !items-center space-x-4">
               <div className="btn-loadmore wow fadeInUp flex items-center">
-                {/* <Button className="btn-secondary w-[188px] mr-4">
-                  <IconShare className="mr-2" />
-                  <span>Share</span>
-                </Button> */}
                 <TwitterShareButton
                   url={window.location.href}
                   title={`Tocen NFT Marketplace Profile`}
@@ -82,7 +76,7 @@ function Collection() {
                 <Button
                   className="btn-secondary w-[170px] sm:w-[188px]"
                   onClick={() => {
-                    redirectToPage(`/edit-profile/${id}`);
+                    toast.success("Coming soon!");
                   }}
                 >
                   <IconEdit className="mr-2" />

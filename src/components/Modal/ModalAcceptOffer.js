@@ -1,10 +1,5 @@
 import Image from "components/ProgressiveImage";
-import { useWeb3 } from "contexts/useWeb3Context";
 import { useState } from "react";
-import { Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { mystToSui, numberShortFormat } from "utils/wallet-utils";
-import styles from "./Modal.module.css";
 import CartModal from "components/layouts/CardModal";
 import { Button, Divider } from "antd";
 import IconSpin from "assets/icons/IconSpin";
@@ -14,7 +9,6 @@ import { NumericFormat } from "react-number-format";
 const ModalAcceptOffer = (props) => {
   const { data, onAccept } = props;
   const [processing, setProcessing] = useState(false);
-  const { balance } = useWeb3();
 
   const handleAccept = () => {
     setProcessing(true);

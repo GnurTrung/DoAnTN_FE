@@ -3,18 +3,11 @@ export const SUI_OFFSET = 1000000000;
 
 export const SC_PACKAGE_MARKET =
   "0x3605d91c559e80cf8fdeabae9abaccb0bc38f96eac0b32bf47e95a9159a5277f";
-export const SC_PACKAGE_MARKET_V1 =
-  "0x3605d91c559e80cf8fdeabae9abaccb0bc38f96eac0b32bf47e95a9159a5277f";
 export const SC_SHARED_MARKET =
   "0xb2b140b2841329320b66f92373a2683af7f9066472233effab03755270bcf65f";
-export const SC_SHARED_MARKET_V1 =
-  "0xb2b140b2841329320b66f92373a2683af7f9066472233effab03755270bcf65f";
-export const SC_SHARED_COLLECTION_OFFER_V1 =
+export const SC_SHARED_COLLECTION_OFFER =
   "0x8c66c43817b07a5bf9d9a73fe7289215b034858a45c1452ef84f324ea956bbed";
-
-  
 export const SC_CONTRACT_MODULE = "tocen_marketplace";
-export const SC_CONTRACT_MODULE_V1 = "tocen_marketplace";
 
 export const BUY_NFT = "buy_and_take";
 export const LIST_NFT = "list";

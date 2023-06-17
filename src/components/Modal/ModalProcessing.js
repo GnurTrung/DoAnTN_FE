@@ -2,19 +2,16 @@ import { Button, Divider } from "antd";
 import IconSpin from "assets/icons/IconSpin";
 import Image from "components/ProgressiveImage";
 import CartModal from "components/layouts/CardModal";
-import { useWeb3 } from "contexts/useWeb3Context";
 import { useState } from "react";
 import { formatPrice } from "utils";
 
 const ModalProcessing = (props) => {
-  const { balance } = useWeb3();
   const [processing, setProcessing] = useState(false);
   const { nft, onBuyNow } = props;
-  const [gas, setGas] = useState(0)
 
   const handleBuyNow = async () => {
     setProcessing(true);
-    await onBuyNow(nft?.listingPrice, gas);
+    await onBuyNow(nft?.listingPrice);
     setProcessing(false);
   };
 

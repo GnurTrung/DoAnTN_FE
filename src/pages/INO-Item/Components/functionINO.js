@@ -5,16 +5,13 @@ import { updateCurrentNFT, verifyNFT } from "services/nfts";
 import { getMessageError } from "utils/error-code";
 import { CLOCK } from "constants/chain";
 import { SUI_OFFSET } from "configs";
-import { TransactionBlock, bcs } from "@mysten/sui.js";
-import { BCS } from "@mysten/bcs";
+import { TransactionBlock } from "@mysten/sui.js";
 import useQuery from "hooks/useQuery";
-import { useWeb3 } from "contexts/useWeb3Context";
 
 const useFunctionIDO = () => {
   const { signAndExecuteTransactionBlock } = useWalletKit();
-  const { getData, nftData, gas, toggleModalWaitingForSignature } =
+  const { getData, nftData, toggleModalWaitingForSignature } =
     useNftDetailContext();
-  const { balance } = useWeb3();
   const { ref } = useQuery();
 
   const attributes = nftData?.attributes;
@@ -53,9 +50,6 @@ const useFunctionIDO = () => {
         default:
           break;
       }
-      // if (value > balance) {
-      //   return toast.error("You don't have enough SUI!");
-      // }
       let code = attributes?.code;
       if (code === "gamioeggwl") code = "gamioegg";
       else if (code === "gamioeggwltest") code = "gamioeggtest";
@@ -68,8 +62,8 @@ const useFunctionIDO = () => {
       toggleModalWaitingForSignature(true);
       const verify = await verifyNFT(dataIDO);
       toggleModalWaitingForSignature(false);
-      if(verify?.data?.error){
-        return toast.error(verify?.data?.message)
+      if (verify?.data?.error) {
+        return toast.error(verify?.data?.message);
       }
       const signature = verify?.data?.signature;
       if (
@@ -83,21 +77,8 @@ const useFunctionIDO = () => {
         return toast.error(
           "Can't verify signature, try re-login the wallet or press Ctrl + F5"
         );
-
       const tx = new TransactionBlock();
-      // let coin = "";
-      // if (value != 0) {
       const [coin] = tx.splitCoins(tx.gas, [tx.pure(value)]);
-      // }
-      // let args = []
-      // if (value == 0) {
-      //   args = [
-      //     tx.pure(SO_INO),
-      //     tx.pure(signature[0].map((num) => num.toString())), // sign
-      //     tx.pure(signature[1].map((num) => num.toString())), // msg
-      //     tx.pure(CLOCK),
-      //   ]
-      // } else if (value != 0) {
       const args = [
         tx.pure(SO_INO),
         coin,
@@ -105,7 +86,6 @@ const useFunctionIDO = () => {
         tx.pure(signature[1].map((num) => num.toString())), // msg
         tx.pure(CLOCK),
       ];
-      // }
       const data = {
         target: `${PK_INO}::${SC_MODULE}::${SC_FUNCTION}`,
         typeArguments: [],
@@ -113,7 +93,6 @@ const useFunctionIDO = () => {
       };
       console.log("moveCall", data);
       tx.moveCall(data);
-      // if (gas > 0) tx.setGasBudget(parseInt(gas * SUI_OFFSET));
       const response = await signAndExecuteTransactionBlock({
         transactionBlock: tx,
         options: {
@@ -137,7 +116,6 @@ const useFunctionIDO = () => {
     } catch (error) {
       console.log(error.message);
       toast.error(getMessageError(error.message));
-      //toast.error('Oops! Insufficient balance or other errors!')
     } finally {
     }
   };

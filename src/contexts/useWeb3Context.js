@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-//import { Base64DataBuffer, Ed25519Keypair, JsonRpcProvider, RawSigner } from "@mysten/sui.js";
 import { Ed25519Keypair, RawSigner } from "@mysten/sui.js";
 import { useWalletKit } from "@mysten/wallet-kit";
 import { useWallet } from "@suiet/wallet-kit";
@@ -38,7 +37,7 @@ export const Web3Provider = ({ children }) => {
   const [showWallet, setShowWallet] = useState(false);
   const [balance, setBalance] = useState(0);
   const [TOCEBalance, setTOCEBalance] = useState(0);
-  const { setRPCUse, provider } = useNetwork();
+  const { provider } = useNetwork();
   const { isConnected, currentAccount, signMessage, disconnect } =
     useWalletKit();
   const [isMounted, setIsMounted] = useState(false);
@@ -46,11 +45,9 @@ export const Web3Provider = ({ children }) => {
   const walletSuiet = useWallet();
 
   const { getBalanceByAddress } = useProviderSigner();
-
   const SPACE_NAME = "Spacecy Sui Wallet";
 
   useEffect(() => {
-    // checkRPC()
     setIsMounted(true);
   }, []);
 
@@ -58,16 +55,12 @@ export const Web3Provider = ({ children }) => {
     if (isConnected && currentAccount) {
       setConnected(true);
       setConnectStatus(EConnectStatus.CONNECTED);
-      //   toast.success("Login Success");
       onLoginKit(currentAccount);
     } else {
-      //isMounted && handleDisconnect()
     }
   }, [isConnected, currentAccount, isMounted]);
 
   const onLoginKit = async (currentAccount) => {
-    //console.log('onLoginKit', isMounted, getCookie())
-    //  setTimeout(async () => {
     const params = {
       network: CHAIN_TYPE,
       address: currentAccount?.address,
@@ -97,13 +90,10 @@ export const Web3Provider = ({ children }) => {
       params.messageBytes = messageBytes;
       params.signature = signature;
     }
-
     await login(params);
-    // }, 1000)
   };
 
   useEffect(() => {
-    // window.walletSuiet = walletSuiet;
     if (!walletSuiet.connected) return;
     const suietWallet = wallets.find((x) => x.tag == SUIET_TAG);
     setConnected(true);
@@ -164,7 +154,6 @@ export const Web3Provider = ({ children }) => {
 
   const handleLogin = async ({ name, tag }) => {
     try {
-      //const provider = new JsonRpcProvider(network);
       const keypair = new Ed25519Keypair();
       const signer = new RawSigner(keypair, provider);
       const signData = new Buffer(
@@ -184,10 +173,9 @@ export const Web3Provider = ({ children }) => {
         account = await suiWalletObject.getAccounts();
         account_address = name === SUIET_NAME ? account.data[0] : account[0];
       }
-
       await login({
         network: CHAIN_TYPE,
-        signature: `tocen::login::${Date.now()}`, // result.signature,
+        signature: `tocen::login::${Date.now()}`,
         address: account_address,
       });
     } catch (ex) {
@@ -213,7 +201,6 @@ export const Web3Provider = ({ children }) => {
     if (connected) {
       setConnectStatus(EConnectStatus.CONNECTED);
       getAccountInfo();
-      // handleLogin(suiWallet)
     } else {
       setAccount(null);
     }
@@ -231,21 +218,6 @@ export const Web3Provider = ({ children }) => {
         TOCE_COIN_TYPE
       );
       setTOCEBalance(TOCEBalance);
-      // const suiWalletObject = getSuiWalletEntity(suiWallet)
-      // let account = false;
-      // let account_address = false;
-      // if (suiWalletObject.name === SPACE_NAME) {
-      //     account = await suiWalletObject.account();
-      //     account_address = account
-      // } else {
-      //     account = await suiWalletObject.getAccounts();
-      //     account_address = (suiWallet.name === SUIET_NAME) ? account.data[0] : account[0]
-      // }
-      // setAccount(account_address);
-      // saveData(ACCOUNT_ADDRESS, account_address)
-      // console.log('account_address', account_address)
-      // const balance = await getBalanceByAddress(account_address)
-      // setBalance(balance)
     } catch (ex) {
       console.log(ex);
     }

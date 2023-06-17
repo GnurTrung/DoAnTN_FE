@@ -32,7 +32,6 @@ const useAuthentication = () => {
         saveCookie(MESSAGE_BYTES, options.messageBytes);
         saveCookie(SIGNATURE, options.signature);
         setIsAuthenticated(true);
-        //setTimeout(() => window.location.reload(), 50)
       }
     } catch (ex) {
       console.log(ex);

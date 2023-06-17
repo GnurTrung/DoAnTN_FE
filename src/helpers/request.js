@@ -1,4 +1,3 @@
-// import Axios from 'axios';
 import { getCookie } from "../utils/cookie-utils";
 import AxiosInstance from "./axios-interceptor";
 import axios from "axios";
@@ -52,7 +51,6 @@ export async function getCMSAsync(url, param) {
   try {
     const response = await axios.get(url, {
       headers: {
-        // Authorization: "Bearer " + getCMSCookie(),
         Accept: "application/json",
         "Content-Type": "application/json",
         "Cache-Control": "no-cache",

@@ -1,10 +1,7 @@
 import IconCube from "assets/icons/IconCube";
-import IconRank from "assets/icons/IconRank";
 import LogoTocenSmall from "assets/images/logo/logo_tocen_small.png";
 import { NavLink } from "react-router-dom";
 import cx from "classnames";
-
-const mainUrl = process.env.REACT_APP_MAIN_URL;
 
 const menus = [
   {

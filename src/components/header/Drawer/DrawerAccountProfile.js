@@ -7,13 +7,11 @@ import { useWeb3 } from "contexts/useWeb3Context";
 import { Link } from "react-router-dom";
 import { formatWallet, mystToSui, numberShortFormat } from "utils/wallet-utils";
 import IconCrown from "../../../assets/icons/drawer/IconCrown";
-import IconEye from "../../../assets/icons/drawer/IconEye";
 import IconHeart from "../../../assets/icons/drawer/IconHeart";
 import IconProfile from "../../../assets/icons/drawer/IconProfile";
 import IconSetting from "../../../assets/icons/drawer/IconSetting";
 import DefaultAvatar from "assets/images/avatar_default.png";
 import { useEffect } from "react";
-import { useApplication } from "contexts/useApplication";
 
 const DrawerAccountProfile = ({ onClose }) => {
   const { Paragraph } = Typography;
@@ -21,8 +19,6 @@ const DrawerAccountProfile = ({ onClose }) => {
   const { handleDisconnect, balance, account } = useWeb3();
 
   const { currentWallet, disconnect } = useWalletKit();
-
-  const { onShowModalSwap } = useApplication();
 
   const walletData = wallets.find(
     (element) => element.name === currentWallet?.name
@@ -37,7 +33,6 @@ const DrawerAccountProfile = ({ onClose }) => {
   }, []);
   return (
     <div>
-      {/* Avatar and Button Disconnect */}
       <div className="flex justify-between">
         <div className="flex gap-[0.7rem]">
           <img
@@ -62,7 +57,6 @@ const DrawerAccountProfile = ({ onClose }) => {
           Disconnect
         </Button>
       </div>
-      {/* End Avatar and Button Disconnect */}
       <Button
         className="btn-primary w-full mt-5"
         onClick={() => requestFaucet(account)}
@@ -70,7 +64,6 @@ const DrawerAccountProfile = ({ onClose }) => {
         Faucet
       </Button>
 
-      {/* Icon wallet */}
       <div className="">
         <div className="bg-[#364055] mt-[1.5rem] rounded-[18px] flex px-[20px] py-[15px] items-center gap-[8px]">
           <p className="font-[500]">Wallet: </p>
@@ -79,9 +72,7 @@ const DrawerAccountProfile = ({ onClose }) => {
           </div>
         </div>
       </div>
-      {/* End Icon Wallet */}
 
-      {/* select list */}
       <ul className="mt-[2rem] bg-[#1B2333] rounded-[18px]">
         <Link
           to={`/profile/${account}`}
@@ -109,19 +100,6 @@ const DrawerAccountProfile = ({ onClose }) => {
             <IconExpand className="rotate-90 w-[18px]" />
           </li>
         </Link>
-        <Link
-          to={`/profile/${account}?tab=watchlist`}
-          onClick={onClose}
-          className="hover:text-white"
-        >
-          <li className="transition-all hover:bg-[#364055] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
-            <div className="flex gap-[0.5rem] items-center">
-              <IconEye />
-              Watchlist
-            </div>
-            <IconExpand className="rotate-90 w-[18px]" />
-          </li>
-        </Link>
         <li className="transition-all hover:bg-[#364055] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
           <div className="flex gap-[0.5rem] items-center">
             <IconCrown />
@@ -129,15 +107,6 @@ const DrawerAccountProfile = ({ onClose }) => {
           </div>
           <IconExpand className="rotate-90 w-[18px]" />
         </li>
-        <Link to={`/portfolio`} onClick={onClose} className="hover:text-white">
-          <li className="transition-all hover:bg-[#364055] group cursor-pointer px-[1.8rem] py-[1.3rem] border-b border-[#4E4D6E] border-solid font-[600] flex justify-between">
-            <div className="flex gap-[0.5rem] items-center">
-              <IconEye />
-              Portfolio
-            </div>
-            <IconExpand className="rotate-90 w-[18px]" />
-          </li>
-        </Link>
         <Link
           to={`/verify-account/${account}`}
           onClick={onClose}
@@ -152,9 +121,7 @@ const DrawerAccountProfile = ({ onClose }) => {
           </li>
         </Link>
       </ul>
-      {/* End Select List */}
 
-      {/* Funds in Wallet */}
       <div className="mt-[2rem]">
         <div className="flex items-center justify-between">
           <span className="text-[#BABAC7] font-[600]">Funds in wallet</span>
