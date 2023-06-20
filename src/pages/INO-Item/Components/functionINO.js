@@ -51,9 +51,6 @@ const useFunctionIDO = () => {
           break;
       }
       let code = attributes?.code;
-      if (code === "gamioeggwl") code = "gamioegg";
-      else if (code === "gamioeggwltest") code = "gamioeggtest";
-
       const dataIDO = {
         code: code,
         type: type,

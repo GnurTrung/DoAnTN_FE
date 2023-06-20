@@ -12,7 +12,7 @@ const useNFTBuyAndTake = () => {
   const { getObject } = useProviderSigner();
   const { signAndExecuteTransactionBlock } = useWalletKit();
 
-  const onBuyAndTake = async (itemID, price, gas, version) => {
+  const onBuyAndTake = async (itemID, price) => {
     try {
       if (!itemID || !price) return;
       const object = await getObject(itemID);
