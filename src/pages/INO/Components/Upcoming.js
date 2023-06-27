@@ -19,17 +19,16 @@ const Explore = () => {
     setIsComplete(true);
   };
   const getUnixTime = (idx) => {
-    return new Date(idx).getTime();
+    return idx * 1000;
   };
   const getStartTime = (idx) => {
     try {
       const arr = [
-        getUnixTime(idx?.attributes?.publicStartTime),
-        getUnixTime(idx?.attributes?.keyHolderStartTime),
-        getUnixTime(idx?.attributes?.whitelistStartTime),
-        getUnixTime(idx?.attributes?.privateStartTime),
+        getUnixTime(idx?.publicStartTime),
+        getUnixTime(idx?.whitelistStartTime),
       ];
       const arrSort = arr.filter((x) => x != 0).sort();
+      console.log(arr, idx);
       return arrSort[0];
     } catch (ex) {
       console.log(ex);
@@ -37,7 +36,7 @@ const Explore = () => {
   };
   const getSuiPricePublic = (idx) => {
     try {
-      const pricePublic = idx?.attributes?.price?.pricePublic;
+      const pricePublic = idx?.pricePublic;
       if (pricePublic == -1) return "TBA";
       else if (pricePublic == 0) return "0 SUI";
       else if (pricePublic) return `${pricePublic} SUI`;
@@ -49,9 +48,9 @@ const Explore = () => {
   const getSuiPriceWhitelist = (idx) => {
     try {
       const arr_price = [
-        { name: "Mintlist", price: idx?.attributes?.price?.priceWhitelist },
-        { name: "Private", price: idx?.attributes?.price?.pricePrivate },
-        { name: "Key Holder", price: idx?.attributes?.price?.priceKeyHolder },
+        { name: "Mintlist", price: idx?.priceWhitelist },
+        { name: "Private", price: idx?.pricePrivate },
+        { name: "Key Holder", price: idx?.priceKeyHolder },
       ];
       const arr_price_filter = arr_price
         .filter((x) => x.price != undefined)
@@ -68,9 +67,9 @@ const Explore = () => {
   const setMinPool = (idx) => {
     try {
       const arr_price = [
-        { name: "Mintlist", price: idx?.attributes?.price?.priceWhitelist },
-        { name: "Private", price: idx?.attributes?.price?.pricePrivate },
-        { name: "Key Holder", price: idx?.attributes?.price?.priceKeyHolder },
+        { name: "Mintlist", price: idx?.priceWhitelist },
+        { name: "Private", price: idx?.pricePrivate },
+        { name: "Key Holder", price: idx?.priceKeyHolder },
       ];
       const arr_price_filter = arr_price
         .filter((x) => x.price != undefined)
@@ -81,17 +80,8 @@ const Explore = () => {
     }
     return "Mintlist";
   };
+  console.log(getStartTime(upcoming[1]), new Date().getTime());
 
-  const getLogo = (item) => {
-    try {
-      const data = item?.attributes?.otherImages?.data;
-      if (data && data[0] && data[0]?.attributes?.url)
-        return getLogoURL(data[0]?.attributes?.url);
-    } catch (ex) {
-      toast.error(ex);
-    }
-    return null;
-  };
   return (
     upcoming.length > 0 &&
     (activeID == 1 || activeID == 3) && (
@@ -110,21 +100,21 @@ const Explore = () => {
                   <div key={idx.id}>
                     <div className="slider-item !rounded-2xl">
                       <div className="sc-product style1">
-                        <Link to={`/ino/${idx?.attributes?.code}`}>
+                        <Link to={`/ino/${idx?.code}`}>
                           <Image
-                            src={getLogo(idx)}
+                            src={idx?.logo}
                             alt="images"
                             className="h-[300px] w-full object-cover rounded-t-2xl aspect-video !m-0"
                           />
                         </Link>
-                        <Link to={`/ino/${idx?.attributes?.code}`}>
+                        <Link to={`/ino/${idx?.code}`}>
                           <div className="my-2 ml-2">
                             <div className="details-product flex flex-row items-center justify-start">
                               <div className="w-[18px]">
                                 <IconVerified />
                               </div>
                               <div className="three_dot_1_line ml-1 text-[16px] font-semibold hover:text-accent text-white">
-                                {idx?.attributes?.name}
+                                {idx?.name}
                               </div>
                             </div>
                           </div>
@@ -136,12 +126,11 @@ const Explore = () => {
                                 Items
                               </p>
                               <p className="font-semibold text-white text-[14px]">
-                                {idx?.attributes?.collectionInfo?.itemCount >=
-                                100000
+                                {idx?.itemCount >= 100000
                                   ? "∞"
-                                  : parseInt(
-                                      idx?.attributes?.collectionInfo?.itemCount
-                                    ).toLocaleString(undefined)}
+                                  : parseInt(idx?.itemCount).toLocaleString(
+                                      undefined
+                                    )}
                               </p>
                             </div>
                             <div>
@@ -162,22 +151,21 @@ const Explore = () => {
                           {isDateGreater(
                             getStartTime(idx),
                             new Date().getTime
-                          ) &&
-                            !countDownComplete && (
-                              <div className="flex items-center justify-between my-3 mx-2 bg-[#1B2333] rounded-2xl">
-                                <span className="text-[12px] ml-4">
-                                  Starts In:
-                                </span>
-                                <div className="w-[65%]">
-                                  <Items_Countdown_timer
-                                    time={
-                                      getStartTime(idx) - new Date().getTime()
-                                    }
-                                    onCountDownComplete={onCountDownComplete}
-                                  />
-                                </div>
+                          ) && (
+                            <div className="flex items-center justify-between my-3 mx-2 bg-[#1B2333] rounded-2xl">
+                              <span className="text-[12px] ml-4">
+                                Starts In:
+                              </span>
+                              <div className="w-[65%]">
+                                <Items_Countdown_timer
+                                  time={
+                                    getStartTime(idx) - new Date().getTime()
+                                  }
+                                  onCountDownComplete={onCountDownComplete}
+                                />
                               </div>
-                            )}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

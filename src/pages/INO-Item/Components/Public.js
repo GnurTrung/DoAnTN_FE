@@ -23,8 +23,8 @@ const Public = () => {
   const onConnect = () => onShowPopupWallet(true);
 
   const publicName = attributes?.mintPoolPublicName || "Public Mint";
-  const publicStartTime = attributes?.publicStartTime || "";
-  const publicEndTime = attributes?.publicEndTime || "";
+  const publicStartTime = attributes?.publicStartTime * 1000 || "";
+  const publicEndTime = attributes?.publicEndTime * 1000 || "";
   const currentWhitelistMint =
     shareObject?.option_mint_whitelist?.fields?.sum_nft || 0;
   const currentPrivateMint =
@@ -35,9 +35,8 @@ const Public = () => {
     shareObject?.option_mint_public?.fields?.sum_nft || 0
   );
   const code = attributes?.code;
-  const publicAccountLimit =
-    attributes?.collectionInfo?.publicAccountLimit || 1;
-  const pricePublic = attributes?.price?.pricePublic;
+  const publicAccountLimit = attributes?.publicAccountLimit || 1;
+  const pricePublic = attributes?.pricePublic;
   const mintNFT = async () => {
     setLoading(true);
     await handleMint("public");
@@ -45,56 +44,48 @@ const Public = () => {
   };
 
   const getCurrentPublicMint = () => {
-    if (code == "monks") {
-      return SO_public - 107;
-    }
-    if (code == "bigfishsurfclub") {
-      return SO_public - 485;
-    }
-    return code == "chillcats" ? SO_public - 225 : SO_public;
+    return SO_public;
   };
 
   const getMaxPublicMint = () => {
     if (
-      attributes?.collectionInfo?.crossPoolMint &&
-      isDateGreater(new Date(publicStartTime), new Date())
+      attributes?.crossPoolMint &&
+      isDateGreater(publicStartTime, new Date().getTime())
     ) {
-      return attributes?.collectionInfo?.maxPublicMint
-        ? attributes?.collectionInfo?.maxPublicMint
-        : 0;
+      return attributes?.maxPublicMint ? attributes?.maxPublicMint : 0;
     }
-    if (isDateGreater(new Date(), new Date(publicEndTime))) {
+    if (isDateGreater(new Date().getTime(), publicEndTime)) {
       return getCurrentPublicMint();
     }
-    if (attributes?.collectionInfo?.crossPoolMint) {
+    if (attributes?.crossPoolMint) {
       return (
-        attributes?.collectionInfo?.itemCount -
+        attributes?.itemCount -
         currentWhitelistMint -
         currentPrivateMint -
         SO_keyHolder -
-        attributes?.collectionInfo?.reversed
+        attributes?.reversed
       );
     } else {
-      return attributes?.collectionInfo?.maxPublicMint;
+      return attributes?.maxPublicMint;
     }
   };
   const maxPLMint = parseInt(getMaxPublicMint() < 0 ? 0 : getMaxPublicMint());
 
   useEffect(() => {
-    let currentTime = new Date();
+    let currentTime = new Date().getTime();
     let timer;
     try {
       timer = setTimeout(() => {
         if (
-          !isDateGreater(new Date(publicStartTime), currentTime) &&
-          isDateGreater(new Date(publicEndTime), currentTime)
+          !isDateGreater(publicStartTime, currentTime) &&
+          isDateGreater(publicEndTime, currentTime)
         ) {
           setIsPLMint(true);
         } else setIsPLMint(false);
       }, 500);
-    } catch (ex) { }
+    } catch (ex) {}
     return () => timer && clearTimeout(timer);
-  }, [isPLMint]);
+  }, [isPLMint, publicEndTime, publicStartTime]);
   const handleCompletePL = () => {
     setIsPLMint(true);
   };
@@ -108,7 +99,7 @@ const Public = () => {
       const percent = max >= 100000 ? 100 : ((current * 100) / max).toFixed();
       bar1.current.style.width = `${percent}%`;
       return `${percent}%`;
-    } catch (ex) { }
+    } catch (ex) {}
     return "";
   };
   const renderButtonMint = () => {
@@ -116,8 +107,9 @@ const Public = () => {
       getCurrentPublicMint() < maxPLMint ? (
         !loading ? (
           <button className="mt-4 btn-primary w-full" onClick={mintNFT}>
-            {`Mint NFT (${accNftData[`${code}`]?.public || 0}/${publicAccountLimit >= 999 ? "∞" : publicAccountLimit
-              })`}
+            {`Mint NFT (${accNftData[`${code}`]?.public || 0}/${
+              publicAccountLimit >= 999 ? "∞" : publicAccountLimit
+            })`}
           </button>
         ) : (
           <button className="mt-4 btn-primary w-full">
@@ -157,7 +149,7 @@ const Public = () => {
   };
   return (
     <>
-      {publicAccountLimit > 0 && (
+      {JSON.stringify(nftData) !== "{}" && (
         <div className="bg-[#131924] border-jacarta-600  rounded-2xl border mt-2 py-4 px-6">
           <div>
             <span className=" text-xl text-white mt-1 font-display font-semibold">
@@ -178,7 +170,7 @@ const Public = () => {
                     <span className="text-jacarta-300 text-[14px]">Items</span>
                     <span className=" text-[18px] text-white mt-1 font-display font-semibold ">
                       {maxPLMint == 0 &&
-                        !isDateGreater(new Date(), new Date(publicStartTime))
+                      !isDateGreater(new Date().getTime(), publicStartTime)
                         ? "TBA"
                         : maxPLMint.toLocaleString(undefined)}
                     </span>
@@ -211,11 +203,12 @@ const Public = () => {
                         </span>
                       )}
                       <span className="text-white ml-1 font-semibold">
-                        {`/ ${maxPLMint == 0 &&
-                            !isDateGreater(new Date(), new Date(publicStartTime))
+                        {`/ ${
+                          maxPLMint == 0 &&
+                          !isDateGreater(new Date().getTime(), publicStartTime)
                             ? "TBA"
                             : maxPLMint.toLocaleString(undefined)
-                          })`}
+                        })`}
                       </span>
                     </div>
                   </div>
@@ -233,14 +226,14 @@ const Public = () => {
             </div>
 
             <div className="flex justify-start flex-col sm:border-jacarta-100 mt-2 sm:mt-0 sm:w-1/2 sm:border-l sm:pl-4 lg:pl-4 border-solid !border-[#4E4D6E] md:border-l border-l-0">
-              {isDateGreater(new Date(publicStartTime), new Date()) && (
+              {isDateGreater(publicStartTime, new Date().getTime()) && (
                 <>
                   <span className="mt-2 mb-2 text-[14px] text-white font-display font-semibold">
                     Starts In:
                   </span>
                   <div className="w-full rounded-2xl">
                     <Items_Countdown_timer
-                      time={new Date(publicStartTime) - new Date()}
+                      time={publicStartTime - new Date().getTime()}
                       onCountDownComplete={handleCompletePL}
                     />
                   </div>
@@ -253,7 +246,7 @@ const Public = () => {
                   </span>
                   <div className="w-full rounded-2xl">
                     <Items_Countdown_timer
-                      time={new Date(publicEndTime) - new Date()}
+                      time={publicEndTime - new Date().getTime()}
                     />
                   </div>
                   {account ? (
@@ -269,7 +262,7 @@ const Public = () => {
                 </>
               ) : (
                 <>
-                  {!isDateGreater(new Date(publicEndTime), new Date()) && (
+                  {!isDateGreater(publicEndTime, new Date().getTime()) && (
                     <EvenEnd />
                   )}
                 </>
