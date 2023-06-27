@@ -43,21 +43,21 @@ export const Provider = ({ children }) => {
       const allData = await getNFTINOAll();
       const all = allData?.data || [];
       const actives = all.filter(
-        (x) => x.attributes.collectionStatus === "Active"
+        (x) => x.collectionStatus === "Active"
       );
       const upcoming = all
-        .filter((x) => x.attributes.collectionStatus === "Upcoming")
+        .filter((x) => x.collectionStatus === "Upcoming")
         .sort(
           (a, b) =>
-            new Date(a.attributes.publicStartTime) -
-            new Date(b.attributes.publicStartTime)
+            new Date(a.publicStartTime) -
+            new Date(b.publicStartTime)
         );
       const completed = all
-        .filter((x) => x.attributes.collectionStatus === "Completed")
+        .filter((x) => x.collectionStatus === "Completed")
         .sort(
           (a, b) =>
-            new Date(b.attributes.publicEndTime) -
-            new Date(a.attributes.publicEndTime)
+            new Date(b.publicEndTime) -
+            new Date(a.publicEndTime)
         );
       setDataActive(actives);
       setDataUpcoming(upcoming);

@@ -15,8 +15,7 @@ const useProviderSigner = (wallet) => {
   }, [wallet]);
 
   const getNetWork = () => {
-    const network =
-      sessionStorage.getItem(FULLNODE) || `https://fullnode.mainnet.sui.io/`;
+    const network = `https://fullnode.mainnet.sui.io/`;
     return {
       fullnode: network,
       faucet: network,

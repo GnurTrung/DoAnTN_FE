@@ -22,7 +22,7 @@ export const likeNftApi = async ({ nftAddress }) => {
 };
 
 const URL = process.env.REACT_APP_API_URL + "/";
-const URLCMS = process.env.REACT_APP_CMS_URL + "/"; 
+const URLCMS = process.env.REACT_APP_CMS_URL + "/";
 
 export const getLaunchpadDrop = async () => {
   try {
@@ -37,8 +37,7 @@ export const getLaunchpadDrop = async () => {
 };
 export const getBanner = async () => {
   try {
-    const url = `${URLCMS}nft-collections/?populate=*&filters[isFeatured][$eq]=true`;
-    const response = await getCMSAsync(url);
+    const response = await getAsync(`/cms/get-list-cms`);
     const { data } = response;
     return data;
   } catch (ex) {
@@ -49,8 +48,7 @@ export const getBanner = async () => {
 
 export const getNFTINOAll = async () => {
   try {
-    const url = `${URLCMS}nft-collections/?populate=*&pagination[pageSize]=100`;
-    const response = await getCMSAsync(url);
+    const response = await getAsync(`/cms/get-list-cms`);
     const { data } = response;
     return data;
   } catch (ex) {
@@ -120,8 +118,7 @@ export const getProjectByCollection = async (collectionAddress) => {
 
 export const getProjectCMSByCode = async (code) => {
   try {
-    const url = `${URLCMS}nft-collections/?populate=*&filters[code][$eq]=${code}`;
-    const response = await getCMSAsync(url);
+    const response = await postAsync(`/cms/get-detail-cms`, { code: code });
     const { data } = response;
     return { data: data.data[0] || {} };
   } catch (ex) {

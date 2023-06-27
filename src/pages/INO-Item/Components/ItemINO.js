@@ -16,7 +16,7 @@ const ItemINO = (data) => {
     onHideModalWaitingForSignature,
   } = useNftDetailContext();
   const attributes = data?.data?.attributes;
-  const urlLogo = getLogoURL(attributes?.otherImages?.data[0]?.attributes?.url);
+  const urlLogo = getLogoURL(attributes?.logo);
   const level = attributes?.level;
 
   const getUnixTime = (idx) => {

@@ -16,11 +16,9 @@ import { isDateGreater } from "utils/date-time";
 INODetail.propTypes = {};
 function INODetail() {
   const { nftData, shareObject } = useNftDetailContext();
-  const banner = getLogoURL(
-    nftData?.attributes?.banner?.data[0]?.attributes?.url
-  );
-  const logo = getLogoURL(nftData?.attributes?.logo?.data?.attributes?.url);
-  const total = parseInt(nftData?.attributes?.collectionInfo?.itemCount || 0);
+  const banner = getLogoURL(nftData?.attributes?.banner);
+  const logo = getLogoURL(nftData?.attributes?.logo);
+  const total = parseInt(nftData?.attributes?.itemCount || 0);
   let minted = 0;
   if (nftData?.attributes?.code == "suibears") {
     minted = 630;
@@ -89,7 +87,7 @@ function INODetail() {
                 />
                 <div className="social">
                   {/* <Link
-                    to={`/collection/${nftData?.attributes?.SCData?.SC_collection}`}
+                    to={`/collection/${nftData?.attributes?.SC_collection}`}
                     className="text-base flex items-center mt-2"
                   > */}
                   <h3 className="flex py-2 items-center">
@@ -134,7 +132,7 @@ function INODetail() {
                   url={window.location.href}
                   title={` Mint ${
                     nftData?.attributes?.name || ""
-                  } on Tocen NFT Marketplace`}
+                  } on GnurT NFT Marketplace`}
                   className="mx-2"
                 >
                   <div className="btn-secondary px-8">
@@ -143,7 +141,7 @@ function INODetail() {
                   </div>
                 </TwitterShareButton>
                 <Link
-                  to={`https://explorer.sui.io/object/${nftData?.attributes?.SCData?.SC_collection}`}
+                  to={`https://explorer.sui.io/object/${nftData?.attributes?.SC_collection}`}
                   target="_blank"
                   rel="noreferrer"
                   className="ml-2"
@@ -155,7 +153,7 @@ function INODetail() {
                 </Link>
                 {isDateGreater(new Date().getTime(), getEndTime()) && (
                   <Link
-                    to={`/collection/${nftData?.attributes?.SCData?.SC_collection}`}
+                    to={`/collection/${nftData?.attributes?.SC_collection}`}
                     className="ml-2"
                   >
                     <button className="btn-primary px-8">

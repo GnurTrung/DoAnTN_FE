@@ -41,25 +41,25 @@ export const Provider = ({ children }) => {
 
   useEffect(() => {
     let interval;
-    if (nftData?.attributes?.SCData?.SO_collection) {
+    if (nftData?.SO_collection) {
       interval = setInterval(
-        () => getDataSo(nftData?.attributes?.SCData?.SO_collection),
+        () => getDataSo(nftData?.SO_collection),
         5000
       );
     }
     return () => {
       clearInterval(interval);
     };
-  }, [nftData?.attributes?.SCData?.SO_collection]);
+  }, [nftData?.SO_collection]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getData = async () => {
     try {
       const res = await getProjectCMSByCode(id);
       setNFTData(res?.data);
-      const SO = await getObject(res?.data?.attributes?.SCData?.SO_collection);
+      const SO = await getObject(res?.data?.SO_collection);
       setTwitterVerify(
-        !!localStorage.getItem(getStoreKey(res?.data?.attributes?.code))
+        !!localStorage.getItem(getStoreKey(res?.data?.code))
       );
       setLastPL(shareObject?.option_mint_public?.fields?.sum_nft || 0);
       setLastWL(shareObject?.option_mint_whitelist?.fields?.sum_nft || 0);

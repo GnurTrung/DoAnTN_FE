@@ -6,7 +6,6 @@ import "swiper/scss/pagination";
 
 import IconRightArrow from "assets/icons/IconRightArrow";
 import Image from "components/ProgressiveImage";
-// import "components/banner/styles.scss";
 import Items_Countdown_timer from "components/items_countdown_timer";
 import { getLogoURL } from "helpers/url-helper";
 import { useRedirect } from "hooks";
@@ -29,15 +28,15 @@ const Banner = () => {
     getData();
   }, []);
   const getUnixTime = (idx) => {
-    return new Date(idx).getTime();
+    return idx * 1000;
   };
   const getStartTime = (idx) => {
     try {
       const arr = [
-        getUnixTime(idx?.attributes?.publicStartTime),
-        getUnixTime(idx?.attributes?.keyHolderStartTime),
-        getUnixTime(idx?.attributes?.whitelistStartTime),
-        getUnixTime(idx?.attributes?.privateStartTime),
+        getUnixTime(idx?.publicStartTime),
+        getUnixTime(idx?.keyHolderStartTime),
+        getUnixTime(idx?.whitelistStartTime),
+        getUnixTime(idx?.privateStartTime),
       ];
       const arrSort = arr.filter((x) => x != 0).sort();
       return arrSort[0];
@@ -48,10 +47,10 @@ const Banner = () => {
   const getEndTime = (idx) => {
     try {
       const arr = [
-        getUnixTime(idx?.attributes?.publicEndTime),
-        getUnixTime(idx?.attributes?.keyHolderEndTime),
-        getUnixTime(idx?.attributes?.whitelistEndTime),
-        getUnixTime(idx?.attributes?.privateEndTime),
+        getUnixTime(idx?.publicEndTime),
+        getUnixTime(idx?.keyHolderEndTime),
+        getUnixTime(idx?.whitelistEndTime),
+        getUnixTime(idx?.privateEndTime),
       ];
       const arrSort = arr
         .filter((x) => x != 0)
@@ -63,20 +62,9 @@ const Banner = () => {
     }
   };
 
-  const getLogo = (item) => {
-    try {
-      const data = item?.attributes?.banner?.data;
-      if (data && data[0] && data[0]?.attributes?.url)
-        return getLogoURL(data[0]?.attributes?.url);
-    } catch (ex) {
-      toast.error(ex);
-    }
-    return null;
-  };
-
   const getSUIprice = (idx) => {
     try {
-      const pricePublic = idx?.attributes?.price?.pricePublic;
+      const pricePublic = idx?.pricePublic;
       if (pricePublic == -1) return "TBA";
       else if (pricePublic == 0) return "0 SUI";
       else if (pricePublic) return `${pricePublic} SUI`;
@@ -85,7 +73,6 @@ const Banner = () => {
     }
     return "-- SUI";
   };
-
   return (
     <section className="tf-slider">
       <div className="">
@@ -112,14 +99,14 @@ const Banner = () => {
                   .map((idx) => (
                     <SwiperSlide key={idx?.id}>
                       <div>
-                        <Link to={`/ino/${idx?.attributes?.code}`}>
+                        <Link to={`/ino/${idx?.code}`}>
                           <section>
                             <div className="container-fluid">
                               <div className="row">
                                 <div className="thumb-pagetitle relative">
                                   {/* <img src={img} alt="images" /> */}
                                   <Image
-                                    src={getLogo(idx)}
+                                    src={idx?.banner}
                                     className="md:aspect-[4/1] md:min-h-[400px] min-h-[540px] !object-cover w-full"
                                     wrapperClassName="w-full"
                                   />
@@ -139,37 +126,33 @@ const Banner = () => {
                           <div className="banner-info !relative">
                             <div
                               onClick={() =>
-                                redirectToPage(`/ino/${idx?.attributes?.code}`)
+                                redirectToPage(`/ino/${idx?.code}`)
                               }
                               className="cursor-pointer !absolute w-full max-w-[1440px] px-[30px] bottom-5 left-[50%] translate-x-[-50%] flex justify-between items-end"
                             >
                               <div className="collection-info relative bottom-4 md:bottom-2 flex flex-col lg:flex-row !items-start lg:!items-end">
                                 <Image
-                                  src={getLogoURL(
-                                    idx?.attributes?.logo?.data?.attributes?.url
-                                  )}
+                                  src={idx?.logo}
                                   className="avatar !h-[150px] !w-[150px] lg:!h-[170px] lg:!w-[170px] lg:mb-0 lg:mr-[1.5rem] rounded-2xl mb-[0.5rem] !aspect-square"
                                   alt="avatar"
                                 />
                                 <div className="social xxl:max-w-[1000px] !max-w-[800px]">
-                                  <Link to={`/ino/${idx?.attributes?.code}`}>
+                                  <Link to={`/ino/${idx?.code}`}>
                                     <p className="text-2xl font-semibold font-display text-white hover:text-accent mb-[0.5rem]">
-                                      {idx?.attributes?.name}
+                                      {idx?.name}
                                     </p>
                                   </Link>
                                   <p className="desc mb-2 three_dot_2_line">
-                                    {idx?.attributes?.description}
+                                    {idx?.description}
                                   </p>
                                   <div className="right-info md:!flex md:!justify-start gap-[1rem] md:gap-0">
                                     <div className="stat !w-[150px]">
                                       <div>
                                         <p>Items</p>
                                         <h4>
-                                          {idx?.attributes?.collectionInfo
-                                            ?.itemCount < 100000
+                                          {idx?.itemCount < 100000
                                             ? parseInt(
-                                                idx?.attributes?.collectionInfo
-                                                  ?.itemCount || 0
+                                                idx?.itemCount || 0
                                               ).toLocaleString(undefined)
                                             : "∞"}
                                         </h4>
@@ -177,7 +160,7 @@ const Banner = () => {
                                       <div>
                                         <p>Starting</p>
                                         <h4>
-                                          {/* {`${idx?.attributes?.price?.pricePublic == -1 ? "TBA" : (idx?.attributes?.price?.pricePublic || "--")} SUI`} */}
+                                          {/* {`${idx?.pricePublic == -1 ? "TBA" : (idx?.pricePublic || "--")} SUI`} */}
                                           {getSUIprice(idx)}
                                         </h4>
                                       </div>

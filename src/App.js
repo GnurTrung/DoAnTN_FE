@@ -15,38 +15,11 @@ import { Toaster } from "react-hot-toast";
 import "../src/assets/binasea.css";
 import "../src/assets/font-awesome.css";
 
-import IconPortfolio from "assets/icons/IconPortforlio";
 import Loading from "components/loading";
-import { FULLNODE } from "constants/wallets";
 import NotFound from "pages/NotFound";
 import { useApplication } from "./contexts/useApplication";
 
 function App() {
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await fetch(
-          process.env.REACT_APP_API_URL + "/get-chain-url?v=1"
-        );
-        const response = await data.json();
-
-        const rpcs = response.data;
-        const randomRPC = rpcs[Math.floor(Math.random() * rpcs.length)];
-        if (randomRPC) {
-          sessionStorage.setItem(FULLNODE, randomRPC);
-        }
-      } catch (ex) {
-        console.log(ex);
-      } finally {
-        // isRuning = false
-      }
-    };
-    getData();
-    let timer = setInterval(() => {
-      getData();
-    }, 30000);
-    return () => timer && clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     if (process.env.NODE_ENV != "development") {

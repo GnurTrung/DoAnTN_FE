@@ -15,7 +15,7 @@ const useNFTMakeOffer = () => {
   const { getObject } = useProviderSigner();
   const { signAndExecuteTransactionBlock } = useWalletKit();
 
-  const onMakeOffer = async (itemID, price, gas, version) => {
+  const onMakeOffer = async (itemID, price) => {
     try {
       if (!itemID || !price || price <= 0) return;
       const object = await getObject(itemID);

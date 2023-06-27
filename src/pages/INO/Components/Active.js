@@ -14,23 +14,16 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 
 const Explore = () => {
-  const {
-    getDataActive,
-    activeID,
-    countDownComplete,
-    setCountDownComplete,
-    active,
-  } = useContexts();
-  const data = getDataActive();
+  const { activeID, countDownComplete, setCountDownComplete, active } =
+    useContexts();
   const { isMounted } = useMounted();
   const onCountDownComplete = () => {
     setCountDownComplete(true);
   };
   const [title, setTitle] = useState("Active");
-  // useEffect(() => { setTitle(categories.find((element) => element.id == activeID)) }, [activeID])
   const getSuiPricePublic = (idx) => {
     try {
-      const pricePublic = idx?.attributes?.price?.pricePublic;
+      const pricePublic = idx?.pricePublic;
       if (pricePublic == -1) return "TBA";
       else if (pricePublic == 0) return "0 SUI";
       else if (pricePublic) return `${pricePublic} SUI`;
@@ -42,9 +35,9 @@ const Explore = () => {
   const getSuiPriceWhitelist = (idx) => {
     try {
       const arr_price = [
-        { name: "Mintlist", price: idx?.attributes?.price?.priceWhitelist },
-        { name: "Private", price: idx?.attributes?.price?.pricePrivate },
-        { name: "Key Holder", price: idx?.attributes?.price?.priceKeyHolder },
+        { name: "Mintlist", price: idx?.priceWhitelist },
+        { name: "Private", price: idx?.pricePrivate },
+        { name: "Key Holder", price: idx?.priceKeyHolder },
       ];
       const arr_price_filter = arr_price
         .filter((x) => x.price != undefined)
@@ -61,9 +54,9 @@ const Explore = () => {
   const setMinPool = (idx) => {
     try {
       const arr_price = [
-        { name: "Mintlist", price: idx?.attributes?.price?.priceWhitelist },
-        { name: "Private", price: idx?.attributes?.price?.pricePrivate },
-        { name: "Key Holder", price: idx?.attributes?.price?.priceKeyHolder },
+        { name: "Mintlist", price: idx?.priceWhitelist },
+        { name: "Private", price: idx?.pricePrivate },
+        { name: "Key Holder", price: idx?.priceKeyHolder },
       ];
       const arr_price_filter = arr_price
         .filter((x) => x.price != undefined)
@@ -75,31 +68,21 @@ const Explore = () => {
     return "Mintlist";
   };
   const getUnixTime = (idx) => {
-    return new Date(idx).getTime();
+    return idx * 1000;
   };
   const getStartTime = (idx) => {
     try {
       const arr = [
-        getUnixTime(idx?.attributes?.publicStartTime),
-        getUnixTime(idx?.attributes?.keyHolderStartTime),
-        getUnixTime(idx?.attributes?.whitelistStartTime),
-        getUnixTime(idx?.attributes?.privateStartTime),
+        getUnixTime(idx?.publicStartTime),
+        getUnixTime(idx?.keyHolderStartTime),
+        getUnixTime(idx?.whitelistStartTime),
+        getUnixTime(idx?.privateStartTime),
       ];
       const arrSort = arr.filter((x) => x != 0).sort();
       return arrSort[0];
     } catch (ex) {
       console.log(ex);
     }
-  };
-  const getLogo = (item) => {
-    try {
-      const data = item?.attributes?.otherImages?.data;
-      if (data && data[0] && data[0]?.attributes?.url)
-        return getLogoURL(data[0]?.attributes?.url);
-    } catch (ex) {
-      toast.error(ex);
-    }
-    return null;
   };
 
   return (
@@ -119,20 +102,20 @@ const Explore = () => {
                   <div key={idx.id}>
                     <div className="slider-item rounded-2xl">
                       <div className="sc-product style1">
-                        <Link to={`/ino/${idx?.attributes?.code}`}>
+                        <Link to={`/ino/${idx?.code}`}>
                           <Image
-                            src={getLogo(idx)}
+                            src={idx?.logo}
                             alt="images"
                             className="h-[300px] w-full object-cover rounded-t-2xl aspect-video !m-0"
                           />
                         </Link>
                         <div className="py-2">
-                          <Link to={`/ino/${idx?.attributes?.code}`}>
+                          <Link to={`/ino/${idx?.code}`}>
                             <div className="my-2 ml-2">
                               <div className="details-product flex flex-row items-center justify-start">
                                 <IconVerified />
                                 <div className="three_dot_1_line ml-1 text-lg font-semibold text-white hover:text-accent">
-                                  {idx?.attributes?.name}
+                                  {idx?.name}
                                 </div>
                               </div>
                             </div>
@@ -143,12 +126,10 @@ const Explore = () => {
                                 Items
                               </p>
                               <p className="font-semibold text-white text-[14px]">
-                                {idx?.attributes?.collectionInfo?.itemCount >=
-                                100000
+                                {idx?.itemCount >= 100000
                                   ? "∞"
                                   : parseInt(
-                                      idx?.attributes?.collectionInfo
-                                        ?.itemCount || 0
+                                      idx?.itemCount || 0
                                     ).toLocaleString(undefined)}
                               </p>
                             </div>
@@ -172,12 +153,7 @@ const Explore = () => {
                           {isDateGreater(
                             new Date().getTime(),
                             getStartTime(idx)
-                          ) && (
-                            <ProgressBar
-                              data={idx?.attributes}
-                              isMounted={isMounted}
-                            />
-                          )}
+                          ) && <ProgressBar data={idx} isMounted={isMounted} />}
                           {isDateGreater(
                             getStartTime(idx),
                             new Date().getTime()
