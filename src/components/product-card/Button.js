@@ -197,6 +197,9 @@ const ButtonAction = (props) => {
     } catch (error) {
       console.log(error);
       onHideWaiting();
+    } finally {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -212,6 +215,9 @@ const ButtonAction = (props) => {
     } catch (ex) {
       console.log(ex);
       onHideWaiting();
+    } finally {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -227,6 +233,9 @@ const ButtonAction = (props) => {
     } catch (error) {
       console.log(error);
       onHideWaiting();
+    } finally {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -241,6 +250,9 @@ const ButtonAction = (props) => {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 

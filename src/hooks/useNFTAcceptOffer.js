@@ -17,7 +17,6 @@ const useNFTAcceptOffer = () => {
     const { itemID, price, isListed, typeNFT, offerAddress, version } = options;
     try {
       if (!itemID || !price || price <= 0 || !offerAddress) return;
-
       const functionAccept = isListed
         ? ACCEPT_OFFER_LISTED
         : ACCEPT_OFFER_NOT_LIST;

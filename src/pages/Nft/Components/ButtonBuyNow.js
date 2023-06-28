@@ -174,9 +174,13 @@ const ButtonBuyNow = () => {
     const itemID = nftDetail?.nftId;
     const version = nftDetail?.version;
     const response = await onListing(itemID, price, gas, version);
+    console.log(response, "99999999999999999999999");
     if (!response) {
       onHideWaiting();
       toast.error("Opps! There are some errors!");
+    } else {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -189,6 +193,9 @@ const ButtonBuyNow = () => {
     if (!response) {
       onHideWaiting();
       toast.error("Opps! There are some errors!");
+    } else {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -207,6 +214,9 @@ const ButtonBuyNow = () => {
     } catch (ex) {
       console.log(ex);
       onHideWaiting();
+    } finally {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -237,6 +247,9 @@ const ButtonBuyNow = () => {
     } catch (ex) {
       console.log(ex);
       onHideWaiting();
+    } finally {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -246,9 +259,13 @@ const ButtonBuyNow = () => {
     const itemID = nftDetail?.nftId;
     const version = nftDetail?.version;
     const response = await onDelist(itemID, gas, version);
+    console.log(response, "9999999");
     if (!response) {
       toast.error("Opps! There are some errors!");
       onHideWaiting();
+    } else {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -258,17 +275,13 @@ const ButtonBuyNow = () => {
         onShowPopupWallet();
         return;
       }
-
       const itemID = nftDetail?.nftId;
       const price = nftDetail?.price || dataOnchain?.price;
       if (!itemID) return;
-      let response;
       if (action === NFT_ACTION.BUY_NOW) {
         if (!price || price <= 0) return;
         onShowProcessing();
-        //response = await onBuyAndTake(itemID, price, gas);
       } else if (action === NFT_ACTION.CANCEl_LISTING) {
-        //response = await onDelist(itemID);
         onShowCancel();
         return;
       } else if (action === NFT_ACTION.LIST_FOR_SALE) {
@@ -278,12 +291,11 @@ const ButtonBuyNow = () => {
         onShowMakeOffer();
         return;
       }
-      //onHideProcessing();
-
-      //if (!response) toast.error("Opps! There are some errors!");
-      //else refreshNftDetail();
     } catch (ex) {
       console.log(ex);
+    } finally {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
 
@@ -302,6 +314,7 @@ const ButtonBuyNow = () => {
       console.log(ex);
     } finally {
       onHideWaiting();
+      onShowSuccess();
     }
   };
 

@@ -42,10 +42,13 @@ export const getMessageErrorBlock = (response) => {
   }
   try {
     const { status, error } = response?.effects?.status;
-
     if (!status) {
       toast.error("Error: No response!");
       return;
+    }
+    if (status === "success") {
+      toast.success("Success!");
+      return "success";
     }
     if (status === "failure") {
       toast.error(error || "Error: No response!");

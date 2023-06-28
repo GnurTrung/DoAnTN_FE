@@ -1,7 +1,7 @@
 import { useNftDetailContext } from "../context";
 import { useWalletKit } from "@mysten/wallet-kit";
 import { toast } from "react-hot-toast";
-import { updateCurrentNFT, verifyNFT } from "services/nfts";
+import { updateCurrentNFT } from "services/nfts";
 import { getMessageError } from "utils/error-code";
 import { CLOCK } from "constants/chain";
 import { SUI_OFFSET } from "configs";
@@ -17,7 +17,7 @@ const useFunctionIDO = () => {
   const attributes = nftData?.attributes;
   const PK_INO = attributes?.SC_collection;
   const SO_INO = attributes?.SO_collection;
-  const SC_MODULE = "boho_collection"
+  const SC_MODULE = attributes?.collectionCategory
   const SC_FUNCTION_WL = "mint_nft_with_whitelist";
   const SC_FUNCTION_PL = "mint_nft_with_public";
   const pricePublic = attributes?.pricePublic;

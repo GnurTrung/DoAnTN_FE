@@ -104,18 +104,6 @@ export const getINOUser = async () => {
   return { data: [], meta: {} };
 };
 
-export const getProjectByCollection = async (collectionAddress) => {
-  try {
-    const url = `${URLCMS}nft-collections/?populate=*&filters[SC_collection][$eq]=${collectionAddress}`;
-    const response = await getCMSAsync(url);
-    const { data } = response;
-    return data;
-  } catch (ex) {
-    console.log(ex);
-  }
-  return { data: [], meta: {} };
-};
-
 export const getProjectCMSByCode = async (code) => {
   try {
     const response = await postAsync(`/cms/get-detail-cms`, { code: code });

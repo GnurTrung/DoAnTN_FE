@@ -7,13 +7,11 @@ import TextInput from "components/input/TextInput";
 import CartModal from "components/layouts/CardModal";
 import { OFFER_OPTIONS } from "constants";
 import { NFT_STATUS } from "constants/nft-action";
-import { useWeb3 } from "contexts/useWeb3Context";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import Countdown from "react-countdown";
 import { toast } from "react-hot-toast";
 import { NumericFormat } from "react-number-format";
-import { getProjectByCollection } from "services/nfts";
 import { formatPrice, removeDotAcceptFirst } from "utils";
 
 const ModalListingNFT = (props) => {
@@ -54,22 +52,22 @@ const ModalListingNFT = (props) => {
     }
   }, [nft?.royaltyFee]);
 
-  useEffect(() => {
-    const getCollectionInfo = async () => {
-      const res = await getProjectByCollection(nft?.collectionAddress);
-      if (res?.data?.[0]?.listingStartTime) {
-        const isListingStart = moment(
-          res?.data?.[0]?.listingStartTime
-        ).isSameOrBefore(moment());
-        setIsListingDisabled(!isListingStart);
-      }
-      if (res?.data?.[0]?.royaltyPercentage)
-        setRoyaltyFee(res?.data?.[0]?.royaltyPercentage);
-    };
-    if (props.show && !nft?.timeListing && !nft?.royaltyFee) {
-      getCollectionInfo();
-    }
-  }, [nft?.timeListing, nft?.royaltyFee, nft?.collectionAddress, props.show]);
+  // useEffect(() => {
+  //   const getCollectionInfo = async () => {
+  //     const res = await getProjectByCollection(nft?.collectionAddress);
+  //     if (res?.data?.[0]?.listingStartTime) {
+  //       const isListingStart = moment(
+  //         res?.data?.[0]?.listingStartTime
+  //       ).isSameOrBefore(moment());
+  //       setIsListingDisabled(!isListingStart);
+  //     }
+  //     if (res?.data?.[0]?.royaltyPercentage)
+  //       setRoyaltyFee(res?.data?.[0]?.royaltyPercentage);
+  //   };
+  //   if (props.show && !nft?.timeListing && !nft?.royaltyFee) {
+  //     getCollectionInfo();
+  //   }
+  // }, [nft?.timeListing, nft?.royaltyFee, nft?.collectionAddress, props.show]);
 
   const handleListing = async () => {
     if (!isValid || processing) return;

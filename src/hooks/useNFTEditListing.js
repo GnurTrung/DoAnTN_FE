@@ -33,7 +33,7 @@ const useNFTEditListing = () => {
         transactionBlock: tx,
         options: { showEffects: true },
       });
-      toast.success("Edit Listing success");
+      toast.success("Edit Listing success!");
       return !!response?.effects?.status?.status;
     } catch (ex) {
       toast.error("Opps! There are some errors");

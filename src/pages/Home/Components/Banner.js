@@ -32,9 +32,7 @@ const Banner = () => {
     try {
       const arr = [
         getUnixTime(idx?.publicStartTime),
-        getUnixTime(idx?.keyHolderStartTime),
         getUnixTime(idx?.whitelistStartTime),
-        getUnixTime(idx?.privateStartTime),
       ];
       const arrSort = arr.filter((x) => x != 0).sort();
       return arrSort[0];
@@ -46,9 +44,7 @@ const Banner = () => {
     try {
       const arr = [
         getUnixTime(idx?.publicEndTime),
-        getUnixTime(idx?.keyHolderEndTime),
         getUnixTime(idx?.whitelistEndTime),
-        getUnixTime(idx?.privateEndTime),
       ];
       const arrSort = arr
         .filter((x) => x != 0)
@@ -59,7 +55,6 @@ const Banner = () => {
       console.log(ex);
     }
   };
-
   const getSUIprice = (idx) => {
     try {
       const pricePublic = idx?.pricePublic;

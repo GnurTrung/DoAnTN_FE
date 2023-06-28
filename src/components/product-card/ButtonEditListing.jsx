@@ -71,6 +71,9 @@ const ButtonEditListing = (props) => {
     } catch (ex) {
       console.log(ex);
       onHideWaiting();
+    } finally {
+      onHideWaiting();
+      onShowSuccess();
     }
   };
   return (
