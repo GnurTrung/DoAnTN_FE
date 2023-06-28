@@ -11,11 +11,9 @@ import { useMounted } from "hooks";
 import { isDateGreater } from "utils/date-time";
 import Items_Countdown_timer from "../../../components/items_countdown_timer";
 import { useState } from "react";
-import { toast } from "react-hot-toast";
 
 const Explore = () => {
-  const { activeID, countDownComplete, setCountDownComplete, active } =
-    useContexts();
+  const { activeID, setCountDownComplete, active } = useContexts();
   const { isMounted } = useMounted();
   const onCountDownComplete = () => {
     setCountDownComplete(true);
@@ -182,7 +180,6 @@ const Explore = () => {
                     </div>
                   </div>
                 ))}
-                {/* </Swiper> */}
               </div>
             }
           </div>

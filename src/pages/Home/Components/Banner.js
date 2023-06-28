@@ -7,10 +7,8 @@ import "swiper/scss/pagination";
 import IconRightArrow from "assets/icons/IconRightArrow";
 import Image from "components/ProgressiveImage";
 import Items_Countdown_timer from "components/items_countdown_timer";
-import { getLogoURL } from "helpers/url-helper";
 import { useRedirect } from "hooks";
 import { useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { getBanner } from "services/nfts";
@@ -104,7 +102,6 @@ const Banner = () => {
                             <div className="container-fluid">
                               <div className="row">
                                 <div className="thumb-pagetitle relative">
-                                  {/* <img src={img} alt="images" /> */}
                                   <Image
                                     src={idx?.banner}
                                     className="md:aspect-[4/1] md:min-h-[400px] min-h-[540px] !object-cover w-full"
@@ -159,10 +156,7 @@ const Banner = () => {
                                       </div>
                                       <div>
                                         <p>Starting</p>
-                                        <h4>
-                                          {/* {`${idx?.pricePublic == -1 ? "TBA" : (idx?.pricePublic || "--")} SUI`} */}
-                                          {getSUIprice(idx)}
-                                        </h4>
+                                        <h4>{getSUIprice(idx)}</h4>
                                       </div>
                                     </div>
                                     {isDateGreater(

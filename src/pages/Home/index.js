@@ -1,6 +1,5 @@
 import { Banner, LaunchpadDrop } from "./Components";
 import Meta from "components/Meta";
-import Marquees from "./Components/Marquees";
 import Ranking from "pages/Ranking";
 
 const Home = () => {
@@ -9,7 +8,6 @@ const Home = () => {
       <Meta title="Home" />
       <div className="">
         <div id="page">
-          <Marquees />
           <Banner />
           <LaunchpadDrop />
           <Ranking />
