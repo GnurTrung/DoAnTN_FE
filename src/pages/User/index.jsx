@@ -26,7 +26,6 @@ function Collection() {
   const { userNFT, id, onSelectTab, tab } = useContexts();
   const { modalShow, setModalShow } = useState([]);
   const { account } = useWeb3();
-  const { redirectToPage } = useRedirect();
 
   return (
     <>

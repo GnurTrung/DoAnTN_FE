@@ -38,19 +38,15 @@ export const Provider = ({ children }) => {
     toggleModal: toggleModalWaitingForSignature,
     onHide: onHideModalWaitingForSignature,
   } = useShowModal();
-
   useEffect(() => {
     let interval;
-    if (nftData?.SO_collection) {
-      interval = setInterval(
-        () => getDataSo(nftData?.SO_collection),
-        5000
-      );
+    if (nftData?.attributes?.SO_collection) {
+      interval = setInterval(() => getDataSo(nftData?.attributes?.SO_collection), 5000);
     }
     return () => {
       clearInterval(interval);
     };
-  }, [nftData?.SO_collection]);
+  }, [nftData?.attributes?.SO_collection]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getData = async () => {
@@ -58,18 +54,11 @@ export const Provider = ({ children }) => {
       const res = await getProjectCMSByCode(id);
       setNFTData(res?.data);
       const SO = await getObject(res?.data?.SO_collection);
-      setTwitterVerify(
-        !!localStorage.getItem(getStoreKey(res?.data?.code))
-      );
+      setTwitterVerify(!!localStorage.getItem(getStoreKey(res?.data?.code)));
       setLastPL(shareObject?.option_mint_public?.fields?.sum_nft || 0);
       setLastWL(shareObject?.option_mint_whitelist?.fields?.sum_nft || 0);
       setLastPV(shareObject?.option_mint_public?.fields?.sum_nft || 0);
       setShareObject(SO?.data?.content?.fields);
-      const options = {
-        project: id,
-      };
-      const response = await getINOPool(options);
-      setNFTDataPool(response?.data || []);
       const dataUser = await getINOUser();
       setAccNFTData(dataUser?.data || {});
     } catch (ex) {

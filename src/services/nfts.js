@@ -22,19 +22,7 @@ export const likeNftApi = async ({ nftAddress }) => {
 };
 
 const URL = process.env.REACT_APP_API_URL + "/";
-const URLCMS = process.env.REACT_APP_CMS_URL + "/";
 
-export const getLaunchpadDrop = async () => {
-  try {
-    const url = `${URLCMS}nft-collections/?populate=*&filters[collectionCategory][$eq]=LaunchpadDrops`;
-    const response = await getCMSAsync(url);
-    const { data } = response;
-    return data;
-  } catch (ex) {
-    console.log(ex);
-  }
-  return { data: [], meta: {} };
-};
 export const getBanner = async () => {
   try {
     const response = await getAsync(`/cms/get-list-cms`);
