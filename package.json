@@ -2,7 +2,6 @@
   "name": "cyboxreact",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dev.tocen.co/marketplace",
   "dependencies": {
     "@cetusprotocol/cetus-sui-clmm-sdk": "^2.6.6",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",

@@ -23,7 +23,7 @@ root.render(
         <ApplicationProvider>
           <Web3Provider>
             <SocketProvider>
-              <BrowserRouter basename="/marketplace">
+              <BrowserRouter>
                 <ScrollToTop />
                 <IconLCP />
                 <App />
