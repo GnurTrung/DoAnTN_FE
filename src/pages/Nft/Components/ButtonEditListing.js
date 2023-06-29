@@ -35,7 +35,7 @@ const ButtonEditListing = (props) => {
       onShowWaiting();
       const itemID = nft?.nftId;
       const version = nft?.version;
-      const response = await onEditListing(itemID, price, gas, version);
+      const response = await onEditListing(itemID, price);
       if (!response) {
         toast.error("Opps! There are some errors!");
         onHideWaiting();

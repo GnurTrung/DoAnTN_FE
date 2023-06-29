@@ -8,11 +8,9 @@ import { toast } from "react-hot-toast";
 import { TransactionBlock } from "@mysten/sui.js";
 import { useWalletKit } from "@mysten/wallet-kit";
 import { getMessageErrorBlock } from "utils/error-code";
-import { useProviderSigner } from "contexts";
 
 const useNFTCancelOffer = () => {
   const { signAndExecuteTransactionBlock } = useWalletKit();
-  const { getObject } = useProviderSigner();
 
   const onCancelOffer = async (options) => {
     const { itemID, price } = options;

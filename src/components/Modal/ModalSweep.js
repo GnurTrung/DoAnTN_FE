@@ -33,7 +33,7 @@ const ModalSweep = (props) => {
               <div className="image">
                 <Image
                   src={props?.logo}
-                  alt="Tocen"
+                  alt="GnurT"
                   className="rounded-md"
                 />
               </div>

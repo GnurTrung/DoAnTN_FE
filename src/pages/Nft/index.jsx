@@ -119,7 +119,7 @@ function NftDetail(props) {
                           <Image
                             className="w-12 rounded-full"
                             src={nftDetail?.collectionImage || DefaultAvatar}
-                            alt="Tocen - NFT Marketplace"
+                            alt="GnurT - NFT Marketplace"
                           />
                           <h6 className="title ml-2">
                             {nftDetail?.collectionName}
@@ -166,7 +166,7 @@ function NftDetail(props) {
                     <div className="image relative">
                       <Image
                         src={nftDetail?.imageUrl || DefaultNftImage}
-                        alt="Tocen - NFT Marketplace"
+                        alt="GnurT - NFT Marketplace"
                       />
                       {nftDetail?.ranking ? (
                         <div
@@ -236,7 +236,7 @@ function NftDetail(props) {
                           <Image
                             className="w-12"
                             src={nftDetail?.collectionImage || DefaultAvatar}
-                            alt="Tocen - NFT Marketplace"
+                            alt="GnurT - NFT Marketplace"
                           />
                           <h6 className="title">{nftDetail?.collectionName}</h6>
                         </div>

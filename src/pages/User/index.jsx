@@ -43,7 +43,7 @@ function Collection() {
                 />
                 <div className="social">
                   <p className="!text-4xl sm:!text-6xl !font-display !font-semibold text-white">
-                    Tocener
+                    GnurT
                   </p>
                   <h3>{userNFT?.name}</h3>
                   <div className="media flex">
@@ -64,7 +64,7 @@ function Collection() {
               <div className="btn-loadmore wow fadeInUp flex items-center">
                 <TwitterShareButton
                   url={window.location.href}
-                  title={`Tocen NFT Marketplace Profile`}
+                  title={`GnurT NFT Marketplace Profile`}
                 >
                   <Button className="btn-secondary">
                     <IconTwitter className="mr-2" />

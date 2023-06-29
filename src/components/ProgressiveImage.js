@@ -11,7 +11,7 @@ import placeHolderImage from "assets/images/collection/default-image.png";
 const Image = ({
   src,
   className = "",
-  alt = "Tocen - NFT Marketplace",
+  alt = "GnurT - NFT Marketplace",
   wrapperClassName,
   ...props
 }) => {

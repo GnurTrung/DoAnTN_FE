@@ -235,7 +235,7 @@ function RankingImpl() {
 
   return (
     <>
-      <Meta title={"Tocen - NFT Marketplace Ranking"} />
+      <Meta title={"GnurT - NFT Marketplace Ranking"} />
       <div className="tf-container pb-36 pt-20">
         <div className="flex justify-between lg:items-center mb-4 flex-col lg:flex-row items-start gap-[1rem] lg:gap-0">
           <h4 className={"heading text-4xl font-semibold"}>Top Collections</h4>

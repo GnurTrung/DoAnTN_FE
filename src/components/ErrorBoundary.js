@@ -33,7 +33,7 @@ class ErrorBoundary extends React.Component {
                 <div className="absolute">
                   <div className="">
                     <h1 className="my-2 text-gray-800 font-semibold text-2xl">
-                      Looks like Tocen Team just update a new version
+                      Looks like GnurT Team just update a new version
                     </h1>
                     <p className="my-2 text-gray-800">Sorry about that! Please reload or go to homepage to get where you need to go.</p>
                     <button

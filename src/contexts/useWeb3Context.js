@@ -157,7 +157,7 @@ export const Web3Provider = ({ children }) => {
       const keypair = new Ed25519Keypair();
       const signer = new RawSigner(keypair, provider);
       const signData = new Buffer(
-        new TextEncoder().encode("Tocen NFT Marketplace world!")
+        new TextEncoder().encode("GnurT NFT Marketplace world!")
       );
 
       const result = await signer.signData(signData);

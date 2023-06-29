@@ -53,7 +53,7 @@ const ModalListingNFT = (props) => {
               <div className="image">
                 <Image
                   src={props?.nft?.imageUrl}
-                  alt="Tocen"
+                  alt="GnurT"
                   className="rounded-md"
                 />
               </div>

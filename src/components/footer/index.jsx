@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles.scss";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/images/logo/logo_tocen.png";
-import logodark from "../../assets/images/logo/logo_tocen_dark.png";
+import logodark from "../../assets/images/logo/logo_gnurt_footer.png";
 
 import "./styles.scss";
 import IconTwitter from "assets/icons/IconTwitter";
@@ -12,86 +11,8 @@ import IconMedium from "assets/icons/IconMedium";
 import IconTelegram from "assets/icons/IconTeleram";
 
 function Footer(props) {
-  const [productLink] = useState([
-    {
-      title: "Spot",
-      path: "/spot",
-    },
-    {
-      title: "Inverse Perpetual",
-      path: "#",
-    },
-    {
-      title: "USDT Perpetual",
-      path: "#",
-    },
-    {
-      title: "Exchange",
-      path: "#",
-    },
-    {
-      title: "Launchpad",
-      path: "#",
-    },
-    {
-      title: "Binance Pay",
-      path: "#",
-    },
-  ]);
-  const [servicesLink] = useState([
-    {
-      title: "Buy Crypto",
-      path: "#",
-    },
-    {
-      title: "Markets",
-      path: "#",
-    },
-    {
-      title: "Tranding Fee",
-      path: "#",
-    },
-    {
-      title: "Affiliate Program",
-      path: "#",
-    },
-    {
-      title: "Referral Program",
-      path: "#",
-    },
-    {
-      title: "API",
-      path: "#",
-    },
-  ]);
-
-  const [listSocial] = useState([
-    {
-      icon: <IconTwitter width={40} height={40} />,
-      path: "https://twitter.com/tocen__",
-    },
-    {
-      icon: <IconDiscord width={40} height={40} />,
-      path: "https://discord.com/invite/DTsJYer7p2",
-    },
-    {
-      icon: <IconMedium width={40} height={40} />,
-      path: "https://medium.com/@tocen__",
-    },
-    {
-      icon: <IconTelegram width={40} height={40} />,
-      path: "https://t.me/tocen_launchpad",
-    },
-  ]);
 
   const [isVisible, setIsVisible] = useState(false);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -117,19 +38,12 @@ function Footer(props) {
                 id="logo_footer"
                 className="logo-dark"
                 src={logodark}
-                alt="Tocen"
-                height={77}
-              />
-              <img
-                id="logo_footer"
-                className="logo-light"
-                src={logo}
-                alt="Tocen"
+                alt="GnurT"
                 height={77}
               />
             </div>
             <p className="content">
-              Tocen nurtures and accelerates top-tier Sui blockchain projects as
+              GnurT nurtures and accelerates top-tier Sui blockchain projects as
               a community-driven incubator
             </p>
             <ul className="social-item !mb-[15px]">
@@ -170,7 +84,7 @@ function Footer(props) {
                 </a>
               </li>
             </ul>
-            <p className="copy-right">© 2023 Tocen</p>
+            <p className="copy-right">© 2023 GnurT</p>
           </div>
           <div className="widget widget-menu mt-[2.5rem]">
             <div className="menu menu-1 !ml-0">
@@ -230,15 +144,6 @@ function Footer(props) {
           </div>
         </div>
       </div>
-
-      {/* {isVisible && (
-        <Link
-          onClick={scrollToTop}
-          to="#"
-          id="scroll-top"
-          className="!hidden md:!block"
-        ></Link>
-      )} */}
     </footer>
   );
 }

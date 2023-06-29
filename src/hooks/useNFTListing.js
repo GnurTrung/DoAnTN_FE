@@ -15,7 +15,7 @@ const useNFTListing = () => {
   const { getObject } = useProviderSigner();
   const { signAndExecuteTransactionBlock } = useWalletKit();
 
-  const onListing = async (itemID, price, gas, version) => {
+  const onListing = async (itemID, price) => {
     try {
       if (!itemID || !price) return;
       const object = await getObject(itemID);

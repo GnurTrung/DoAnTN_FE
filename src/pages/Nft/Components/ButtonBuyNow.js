@@ -173,8 +173,7 @@ const ButtonBuyNow = () => {
     onHideListing();
     const itemID = nftDetail?.nftId;
     const version = nftDetail?.version;
-    const response = await onListing(itemID, price, gas, version);
-    console.log(response, "99999999999999999999999");
+    const response = await onListing(itemID, price);
     if (!response) {
       onHideWaiting();
       toast.error("Opps! There are some errors!");
@@ -189,7 +188,7 @@ const ButtonBuyNow = () => {
     onHideMakeOffer();
     const itemID = nftDetail?.nftId;
     const version = nftDetail?.version;
-    const response = await onMakeOffer(itemID, price, gas, version);
+    const response = await onMakeOffer(itemID, price);
     if (!response) {
       onHideWaiting();
       toast.error("Opps! There are some errors!");
@@ -206,7 +205,7 @@ const ButtonBuyNow = () => {
       const { price } = data;
       const itemID = nftDetail?.nftId;
       const version = nftDetail?.version;
-      const response = await onCancelOffer({ price, itemID, gas, version });
+      const response = await onCancelOffer({ price, itemID });
       if (!response) {
         toast.error("Opps! There are some errors!");
         onHideWaiting();
@@ -258,7 +257,7 @@ const ButtonBuyNow = () => {
     onShowWaiting();
     const itemID = nftDetail?.nftId;
     const version = nftDetail?.version;
-    const response = await onDelist(itemID, gas, version);
+    const response = await onDelist(itemID);
     console.log(response, "9999999");
     if (!response) {
       toast.error("Opps! There are some errors!");
@@ -305,7 +304,7 @@ const ButtonBuyNow = () => {
       onShowWaiting();
       const itemID = nftDetail?.nftId;
       const version = nftDetail?.version;
-      const response = await onBuyAndTake(itemID, price, gas, version);
+      const response = await onBuyAndTake(itemID, price);
       if (!response) {
         toast.error("Opps! There are some errors!");
         onHideWaiting();

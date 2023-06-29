@@ -37,7 +37,7 @@ const ModalCancelNFT = (props) => {
           Are you sure you want to cancel your listing?
         </h4>
         <p className="text-[#BABAC7] leading-5">
-          Canceling your listing will unpublish this sale from Tocen and
+          Canceling your listing will unpublish this sale from GnurT and
           requires a transaction to make sure it will never be fulfillable.
         </p>
       </div>

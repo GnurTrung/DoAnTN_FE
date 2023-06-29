@@ -37,7 +37,7 @@ const DrawerAccountProfile = ({ onClose }) => {
         <div className="flex gap-[0.7rem]">
           <img
             src={DefaultAvatar}
-            alt="Tocen - NFT Marketplace"
+            alt="GnurT - NFT Marketplace"
             className="rounded-full w-[48px] h-[48px]"
           />
           <div>

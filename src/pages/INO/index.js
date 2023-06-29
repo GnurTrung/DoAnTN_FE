@@ -25,7 +25,7 @@ const INOImpl = () => {
   }
   return (
     <>
-      <Meta title={"Tocen - NFT Marketplace INO"} />
+      <Meta title={"GnurT - NFT Marketplace INO"} />
       <div className="pb-20">
         <div id="page">
           <Banner />

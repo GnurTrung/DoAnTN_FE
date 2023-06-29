@@ -11,7 +11,7 @@ const menus = [
     icon: (
       <img
         src={LogoTocenSmall}
-        alt="Tocen"
+        alt="GnurT"
         width={19}
         height={19}
         className="opacity-60"

@@ -17,7 +17,7 @@ const ModalWallet = (props) => {
             return (
                 <li className={`${styles.limodal}`} key={x.tag}>
                     <a className={`${styles.row}`} onClick={() => onConnect(x)}>
-                        <img src={x.src} alt="Tocen - NFT Marketplace" className={styles.icon} />
+                        <img src={x.src} alt="GnurT - NFT Marketplace" className={styles.icon} />
                         <div className={`${styles.item}`}>
                             {x.name}
                         </div>

@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import menus, { subMenus } from "../../pages/menu";
 
-import logoMobile from "../../assets/images/logo/logo_dark_mobile.png";
-import logodark from "../../assets/images/logo/logo_tocen_dark.png";
+import logoMobile from "../../assets/images/logo/logo_mb.png";
+import logodark from "../../assets/images/logo/logo_gnurt.png";
 import "./styles.scss";
 
 import { useWeb3 } from "../../contexts/useWeb3Context";
@@ -12,9 +12,7 @@ import Authen from "./Authen";
 import NotAuthen from "./NotAuthen";
 
 import { Dropdown } from "antd";
-import IconMore from "assets/icons/IconMore";
 import cx from "classnames";
-import DrawerMenu from "components/DrawerMenu";
 import { useDrawerMenu } from "hooks";
 import MobileNav from "./MobileNav";
 import SearchHeader from "./SearchHeader";
@@ -80,19 +78,19 @@ const Header = () => {
                         id="logo_header"
                         className={`logo-dark w-[7rem] py-[0.8rem] !hidden sm:!block`}
                         src={logodark}
-                        alt="Tocen"
+                        alt="GnurT"
                       />
                       {/* <img
                       id="logo_header"
                       className="logo-light"
                       src={logo}
-                      alt="Tocen"
+                      alt="GnurT"
                     /> */}
                       <img
                         id="logo_header"
                         className={`logo-dark sm:!hidden w-[2.1rem] py-[1rem] block`}
                         src={logoMobile}
-                        alt="Tocen"
+                        alt="GnurT"
                       />
                     </Link>
                   </div>

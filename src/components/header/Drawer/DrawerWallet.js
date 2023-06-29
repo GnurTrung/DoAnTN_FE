@@ -30,7 +30,7 @@ const DrawerWallet = () => {
         >
           <img
             src={x.src}
-            alt="Tocen - NFT Marketplace"
+            alt="GnurT - NFT Marketplace"
             className="w-[30px] h-[30px]"
           />
           <div className="group-hover:text-white transition-all text-[14px] font-[600] text-[#CBD4E6]">

@@ -85,7 +85,7 @@ const SharingProgram = () => {
       <div className="col-span-1 lg:col-span-6 xxl:col-span-5 md:pl-0 lg:pl-[3.75rem]">
         <div className="bg-[#131924] rounded-2xl p-5">
           <h3 className="text-white text-xl font-semibold leading-8">
-            Tocen Sharing Program
+            GnurT Sharing Program
           </h3>
           <div className="flex flex-col items-end">
             <CustomTable

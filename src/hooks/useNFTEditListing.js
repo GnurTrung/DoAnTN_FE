@@ -12,7 +12,7 @@ import { useWalletKit } from "@mysten/wallet-kit";
 const useNFTEditListing = () => {
   const { signAndExecuteTransactionBlock } = useWalletKit();
 
-  const onEditListing = async (itemID, price, gas, version) => {
+  const onEditListing = async (itemID, price) => {
     try {
       if (!itemID || !price) return;
 

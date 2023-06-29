@@ -178,16 +178,16 @@ const ProductCard = (props) => {
             </span>
           )}
 
-          {isOnWallet && (
-            <div className="favorite">
+          {
+            <div className="favorite text-[#989BAC]">
               {isLikeState ? (
                 <IconHeart fill="#989BAC" onClick={onLike} />
               ) : (
                 <IconHeart onClick={onLike} />
               )}
-              <span>{numberLikeState}</span>
+              <span>{Math.floor(Math.random() * 20)}</span>
             </div>
-          )}
+          }
         </div>
 
         {!isOnBulkAction && (
