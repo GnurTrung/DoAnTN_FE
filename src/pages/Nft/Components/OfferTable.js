@@ -96,7 +96,7 @@ const OfferTable = () => {
                   </span>
                   {dataOnchain?.owner === account && (
                     <span
-                      className="text-[#9998AC] cursor-pointer font-semibold"
+                      className="text-accent cursor-pointer font-semibold"
                       onClick={() =>
                         onShowAcceptOffer({
                           dataNFT: dataOnchain,

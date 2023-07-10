@@ -310,7 +310,7 @@ function NftDetail(props) {
                                 <p>
                                   You can also{" "}
                                   <span
-                                    className="content_bottom-desc_special cursor-pointer"
+                                    className="content_bottom-desc_special cursor-pointer text-accent"
                                     onClick={onShowMakeOffer}
                                   >
                                     make an offer
