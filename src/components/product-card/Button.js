@@ -191,15 +191,15 @@ const ButtonAction = (props) => {
       onHideBuyNow();
       const response = await onBuyAndTake(nftId, price, gas);
       if (!response) {
-        toast.error("Opps! There are some errors!");
+        // toast.error("Opps! There are some errors!");
         onHideWaiting();
+      } else {
+        onHideWaiting();
+        onShowSuccess();
       }
     } catch (error) {
       console.log(error);
       onHideWaiting();
-    } finally {
-      onHideWaiting();
-      onShowSuccess();
     }
   };
 
@@ -209,15 +209,15 @@ const ButtonAction = (props) => {
       onHideMakeOffer();
       const response = await onMakeOffer(nftId, price, gas);
       if (!response) {
-        toast.error("Opps! There are some errors!");
+        // toast.error("Opps! There are some errors!");
         onHideWaiting();
+      } else {
+        onHideWaiting();
+        onShowSuccess();
       }
     } catch (ex) {
       console.log(ex);
       onHideWaiting();
-    } finally {
-      onHideWaiting();
-      onShowSuccess();
     }
   };
 
@@ -227,15 +227,15 @@ const ButtonAction = (props) => {
       onHideListing();
       const response = await onListing(nftId, price, gas);
       if (!response) {
-        toast.error("Opps! There are some errors!");
+        // toast.error("Opps! There are some errors!");
         onHideWaiting();
+      } else {
+        onHideWaiting();
+        onShowSuccess();
       }
     } catch (error) {
       console.log(error);
       onHideWaiting();
-    } finally {
-      onHideWaiting();
-      onShowSuccess();
     }
   };
 
@@ -245,14 +245,14 @@ const ButtonAction = (props) => {
       onHideCancel();
       const response = await onDelist(nftId, gas);
       if (!response) {
-        toast.error("Opps! There are some errors!");
+        // toast.error("Opps! There are some errors!");
         onHideWaiting();
+      } else {
+        onHideWaiting();
+        onShowSuccess();
       }
     } catch (error) {
       console.log(error);
-    } finally {
-      onHideWaiting();
-      onShowSuccess();
     }
   };
 
