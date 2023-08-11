@@ -6,9 +6,9 @@ const useNFTDetails = () => {
     let result = {};
     try {
       const { data, error } = await getObject(id);
-      if (error) {
-        return result;
-      }
+      // if (error) {
+      //   return result;
+      // }
       const {
         type,
         fields,
